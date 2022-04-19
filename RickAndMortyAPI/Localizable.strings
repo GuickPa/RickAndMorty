@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  RickAndMortyAPI
+
+  Created by Guglielmo Deletis on 19/04/22.
+  
+*/
+
+// errors
+"gd_error_instance" = "An instance was already init";
+"gd_error_unallowed_method" = "Method not allowed";

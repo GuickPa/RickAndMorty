@@ -15,6 +15,13 @@
 		BE6E7023280F470B00B641BC /* RickAndMortyAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E7022280F470B00B641BC /* RickAndMortyAPITests.swift */; };
 		BE6E702D280F470B00B641BC /* RickAndMortyAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E702C280F470B00B641BC /* RickAndMortyAPIUITests.swift */; };
 		BE6E702F280F470B00B641BC /* RickAndMortyAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E702E280F470B00B641BC /* RickAndMortyAPIUITestsLaunchTests.swift */; };
+		BE6E703D280F47A900B641BC /* GDRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E703C280F47A900B641BC /* GDRequestHandler.swift */; };
+		BE6E703F280F4A5200B641BC /* GDOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E703E280F4A5200B641BC /* GDOperationQueue.swift */; };
+		BE6E7042280F4A6B00B641BC /* GDOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E7041280F4A6B00B641BC /* GDOperation.swift */; };
+		BE6E7044280F5AF700B641BC /* GDOperationQueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E7043280F5AF700B641BC /* GDOperationQueueManager.swift */; };
+		BE6E7046280F5E2500B641BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE6E7045280F5E2500B641BC /* Localizable.strings */; };
+		BE6E7049280F5E7200B641BC /* GDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E7048280F5E7200B641BC /* GDError.swift */; };
+		BE6E704B280F673600B641BC /* GDSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E704A280F673600B641BC /* GDSessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		BE6E7028280F470B00B641BC /* RickAndMortyAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6E702C280F470B00B641BC /* RickAndMortyAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAPIUITests.swift; sourceTree = "<group>"; };
 		BE6E702E280F470B00B641BC /* RickAndMortyAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BE6E703C280F47A900B641BC /* GDRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDRequestHandler.swift; sourceTree = "<group>"; };
+		BE6E703E280F4A5200B641BC /* GDOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDOperationQueue.swift; sourceTree = "<group>"; };
+		BE6E7041280F4A6B00B641BC /* GDOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDOperation.swift; sourceTree = "<group>"; };
+		BE6E7043280F5AF700B641BC /* GDOperationQueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDOperationQueueManager.swift; sourceTree = "<group>"; };
+		BE6E7045280F5E2500B641BC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		BE6E7048280F5E7200B641BC /* GDError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDError.swift; sourceTree = "<group>"; };
+		BE6E704A280F673600B641BC /* GDSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDSessionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,7 @@
 		BE6E6FFF280F470A00B641BC = {
 			isa = PBXGroup;
 			children = (
+				BE6E7045280F5E2500B641BC /* Localizable.strings */,
 				BE6E700A280F470A00B641BC /* RickAndMortyAPI */,
 				BE6E7021280F470B00B641BC /* RickAndMortyAPITests */,
 				BE6E702B280F470B00B641BC /* RickAndMortyAPIUITests */,
@@ -97,6 +112,9 @@
 		BE6E700A280F470A00B641BC /* RickAndMortyAPI */ = {
 			isa = PBXGroup;
 			children = (
+				BE6E7047280F5E6700B641BC /* Shared */,
+				BE6E7040280F4A5A00B641BC /* Operations */,
+				BE6E703B280F478E00B641BC /* Requests */,
 				BE6E700B280F470A00B641BC /* AppDelegate.swift */,
 				BE6E700F280F470A00B641BC /* ViewController.swift */,
 				BE6E7011280F470A00B641BC /* Main.storyboard */,
@@ -122,6 +140,33 @@
 				BE6E702E280F470B00B641BC /* RickAndMortyAPIUITestsLaunchTests.swift */,
 			);
 			path = RickAndMortyAPIUITests;
+			sourceTree = "<group>";
+		};
+		BE6E703B280F478E00B641BC /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				BE6E703C280F47A900B641BC /* GDRequestHandler.swift */,
+				BE6E704A280F673600B641BC /* GDSessionManager.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		BE6E7040280F4A5A00B641BC /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				BE6E703E280F4A5200B641BC /* GDOperationQueue.swift */,
+				BE6E7041280F4A6B00B641BC /* GDOperation.swift */,
+				BE6E7043280F5AF700B641BC /* GDOperationQueueManager.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		BE6E7047280F5E6700B641BC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BE6E7048280F5E7200B641BC /* GDError.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE6E7018280F470B00B641BC /* LaunchScreen.storyboard in Resources */,
+				BE6E7046280F5E2500B641BC /* Localizable.strings in Resources */,
 				BE6E7015280F470B00B641BC /* Assets.xcassets in Resources */,
 				BE6E7013280F470A00B641BC /* Main.storyboard in Resources */,
 			);
@@ -257,6 +303,12 @@
 			files = (
 				BE6E7010280F470A00B641BC /* ViewController.swift in Sources */,
 				BE6E700C280F470A00B641BC /* AppDelegate.swift in Sources */,
+				BE6E703F280F4A5200B641BC /* GDOperationQueue.swift in Sources */,
+				BE6E704B280F673600B641BC /* GDSessionManager.swift in Sources */,
+				BE6E703D280F47A900B641BC /* GDRequestHandler.swift in Sources */,
+				BE6E7044280F5AF700B641BC /* GDOperationQueueManager.swift in Sources */,
+				BE6E7049280F5E7200B641BC /* GDError.swift in Sources */,
+				BE6E7042280F4A6B00B641BC /* GDOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
