@@ -7,7 +7,20 @@
 
 import UIKit
 
-extension UIViewController {
+class GDBaseViewController: UIViewController {
+    var loader: GDLoader
+    
+    init(loader:GDLoader, nibName:String, bundle: Bundle?) {
+        self.loader = loader
+        super.init(nibName: nibName, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) is not supported")
+    }
+}
+
+extension GDBaseViewController {
     func showError(_ error: Error) {
         let alert = UIAlertController(title: NSLocalizedString("error_title", comment: "Error"), message: error.localizedDescription, preferredStyle: .alert)
         alert.definesPresentationContext = true

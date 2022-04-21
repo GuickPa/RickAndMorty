@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GDCharacterViewController" customModule="RickAndMortyAPI" customModuleProvider="target">
+            <connections>
+                <outlet property="loadingView" destination="hsE-xW-UnT" id="xRi-Wy-cFJ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="4gO-Pz-Q4f"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsE-xW-UnT">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ZZL-ay-BGR">
+                            <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.74743150680000003" alpha="0.6016695205" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ZZL-ay-BGR" firstAttribute="centerY" secondItem="hsE-xW-UnT" secondAttribute="centerY" id="2Bb-4K-riQ"/>
+                        <constraint firstItem="ZZL-ay-BGR" firstAttribute="centerX" secondItem="hsE-xW-UnT" secondAttribute="centerX" id="Zfv-Uo-NNL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="hsE-xW-UnT" secondAttribute="bottom" id="Csc-cg-Pyo"/>
+                <constraint firstItem="hsE-xW-UnT" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Cwc-Ys-DOo"/>
+                <constraint firstItem="hsE-xW-UnT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Pjv-LI-xdX"/>
+                <constraint firstItem="hsE-xW-UnT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YOQ-oj-toX"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="46"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

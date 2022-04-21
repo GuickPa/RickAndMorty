@@ -7,42 +7,33 @@
 
 import UIKit
 
-class GDMainViewController: UIViewController {
-    
+class GDMainViewController: GDBaseViewController {
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var loadingView: UIView!
+    private var listHandler: GDListHandler
     
-    private var _loader: GDLoader!
-    private var _listHandler: GDListHandler!
-    
-    var loader: GDLoader {
-        get {
-            return _loader
-        }
-        set {
-            _loader = newValue
-        }
+    init(loader:GDLoader, listHandler: GDListHandler) {
+        self.listHandler = listHandler
+        super.init(loader: loader, nibName: "GDMainViewController", bundle: nil)
     }
-    
-    var listHandler: GDListHandler {
-        get {
-            return _listHandler
-        }
-        set {
-            _listHandler = newValue
-        }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) is not supported")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loader = GDDataLoader(self)
-        self.listHandler = GDCharacterListHandler(decoder: GDCharacterDataDecoder())
+        self.mainTableView.register(
+            UINib(nibName: "GDCharacterTableViewCell", bundle: nil),
+            forCellReuseIdentifier: GDCharacterTableViewCell.reuseIdentifier
+        )
+        // load character list and wait
+        self.loader.delegate = self
+        self.loader.load(urlString: GDConst.characterListURLString, handler: GDOperationQueueManager.instance)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // load character list and wait
-        self.loader.load(urlString: GDConst.characterListURLString, handler: GDOperationQueueManager.instance)
     }
 }
 
@@ -60,7 +51,15 @@ extension GDMainViewController: UITableViewDataSource {
 //MARK: UITableViewDelegate
 extension GDMainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let character = self.listHandler.list?.results[indexPath.row] {
+            let loader = GDDataLoader()
+            let characterHandler = GDCharacterDetailsHandler(characterId: character.id, decoder: GDGenericDataDecoder())
+            self.navigationController?.pushViewController(
+                GDCharacterViewController(loader: loader, detailsHandler: characterHandler),
+                //UIViewController(nibName: "GDCharacterViewController", bundle: nil),
+                animated: true
+            )
+        }
     }
 }
 

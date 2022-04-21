@@ -8,15 +8,15 @@
 import Foundation
 
 protocol GDDataDecoder {
-    func decode(data: Data) -> GDCharacterList?
+    func decode<T:Decodable>(data: Data, classType: T.Type) -> T?
 }
 
-class GDCharacterDataDecoder: GDDataDecoder {
-    func decode(data: Data) -> GDCharacterList? {
+class GDGenericDataDecoder: GDDataDecoder {
+    func decode<T:Decodable>(data: Data, classType: T.Type) -> T? {
         let decoder = JSONDecoder()
         do {
-            let list = try decoder.decode(GDCharacterList.self, from: data)
-            return list
+            let item = try decoder.decode(classType, from: data)
+            return item
         } catch {
             print(error.localizedDescription)
             return nil

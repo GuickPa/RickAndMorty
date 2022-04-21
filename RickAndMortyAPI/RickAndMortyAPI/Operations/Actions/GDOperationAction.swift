@@ -38,6 +38,11 @@ class GDAPIOperationAction: GDOperationAction {
         self.operationCallback = callback
         self.sessionHandler = sessionHandler
         self.httpDataTask = sessionHandler.dataTask(with: self.urlRequest, completionHandler: { data, response, error in
+#if DEBUG
+            if let e = error {
+                GDLogger.log("API response error is", e, self.urlRequest.url?.absoluteString ?? "")
+            }
+#endif
             self.operationCallback(data, error)
             self.sessionHandler.endDataTask()
         })

@@ -8,6 +8,7 @@
 import Foundation
 
 protocol GDLoader {
+    var delegate: GDLoaderDelegate! { get set }
     func load(urlString: String, handler: GDOperationQueueHandler)
 }
 
@@ -18,10 +19,15 @@ protocol GDLoaderDelegate {
 }
 
 class GDDataLoader {
-    private var delegate: GDLoaderDelegate
+    var _delegate: GDLoaderDelegate!
     
-    init(_ delegate: GDLoaderDelegate) {
-        self.delegate = delegate
+    var delegate: GDLoaderDelegate! {
+        get {
+            return _delegate
+        }
+        set {
+            _delegate = newValue
+        }
     }
 }
 

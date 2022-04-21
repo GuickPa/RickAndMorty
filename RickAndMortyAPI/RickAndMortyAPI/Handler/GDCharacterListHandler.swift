@@ -8,7 +8,7 @@
 import UIKit
 
 protocol GDListHandler {
-    var list: GDCharacterList { get }
+    var list: GDCharacterList? { get }
     func listFromData(_ data: Data)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -16,9 +16,9 @@ protocol GDListHandler {
 
 class GDCharacterListHandler: GDListHandler {
     let decoder: GDDataDecoder
-    private var characterList: GDCharacterList!
+    var characterList: GDCharacterList?
     
-    var list: GDCharacterList {
+    var list: GDCharacterList? {
         get {
             return characterList
         }
@@ -29,18 +29,18 @@ class GDCharacterListHandler: GDListHandler {
     }
     
     func listFromData(_ data: Data) {
-        self.characterList = self.decoder.decode(data: data)
+        self.characterList = self.decoder.decode(data: data, classType: GDCharacterList.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.characterList.info.count
+        return self.characterList?.info.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let character = self.characterList.results[indexPath.row]
+        let character = self.characterList?.results[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: GDCharacterTableViewCell.reuseIdentifier, for: indexPath) as! GDCharacterTableViewCell
         
-        cell.nameLabel.text = character.name
+        cell.nameLabel.text = character?.name
         
         return cell
     }
