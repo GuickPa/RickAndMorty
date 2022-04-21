@@ -8,11 +8,11 @@
 import Foundation
 
 protocol GDOperationQueueHandler {
-    func addToQueue(_ operation: Operation)
+    func addToQueue(_ operation: GDOperationHandler)
     func clearQueue()
 }
 
-class GDOperationQueueManager:GDOperationQueueHandler {
+class GDOperationQueueManager: GDOperationQueueHandler {
     // for singleton
     private static let _instance: GDOperationQueueManager = GDOperationQueueManager()
     static var instance:GDOperationQueueManager {
@@ -28,12 +28,11 @@ class GDOperationQueueManager:GDOperationQueueHandler {
         self.queue.maxConcurrentOperationCount = 1
     }
     
-    func addToQueue(_ operation: Operation) {
+    func addToQueue(_ operation: GDOperationHandler) {
         if !operation.isFinished {
             self.queue.addOperation(operation)
         }
         else {
-            // AWLogger.log("operation can't be added to queue because it is already finished")
         }
     }
     

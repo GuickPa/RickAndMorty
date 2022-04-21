@@ -7,43 +7,46 @@
 
 import Foundation
 
-protocol GDOperationHandler {
-    var isAsynchronous:Bool { get }
-    var isExecuting:Bool { get }
-    var isFinished:Bool { get }
-    var isCancelled:Bool { get set }
-    
-    func start()
-    func main()
-    func cancel()
+protocol GDOperationHandler: Operation {
     func finish()
 }
 
-internal class GDOperation: GDOperationHandler {
+protocol GDOperationDelegate {
+    func operationStarted(_ operation: GDOperation)
+    func operationCompleted(_ operation: GDOperation, withData data:Data?)
+    func operationFailed(_ operation: GDOperation, withError error:Error?)
+    func operationCancelled(_ operation: GDOperation)
+}
+
+class GDOperation: Operation, GDOperationHandler {
 
     private var _isExecuting:Bool = false
     private var _isFinished:Bool = false
     private var _isCancelled:Bool = false
     
-    var isAsynchronous: Bool {
+    private var delegate:GDOperationDelegate
+    
+    private var operationAction:GDOperationAction
+    
+    override var isAsynchronous: Bool {
         get {
             return false
         }
     }
     
-    var isExecuting: Bool {
+    override var isExecuting: Bool {
         get {
             return _isExecuting
         }
     }
     
-    var isFinished: Bool {
+    override var isFinished: Bool {
         get {
             return _isFinished
         }
     }
     
-    var isCancelled: Bool {
+    override var isCancelled: Bool {
         get {
             return _isCancelled
         }
@@ -52,11 +55,11 @@ internal class GDOperation: GDOperationHandler {
         }
     }
     
-    func start() {
+    override func start() {
         if self.isCancelled {
             _isExecuting = false
             _isFinished = true
-            
+            self.delegate.operationCancelled(self)
         }
         else {
             _isExecuting = true
@@ -65,21 +68,40 @@ internal class GDOperation: GDOperationHandler {
         }
     }
     
-    func main() {
+    override func main() {
         if self.isCancelled {
             self.finish()
+            self.delegate.operationCancelled(self)
         }
         else {
-            
+            self.delegate.operationStarted(self)
+            self.operationAction.main(sessionHandler: GDSession()) { data, error in
+                if let e = error {
+                    self.delegate.operationFailed(self, withError: e)
+                } else {
+                    self.delegate.operationCompleted(self, withData: data)
+                }
+                self.finish()
+            }
         }
     }
     
-    func cancel() {
+    override func cancel() {
         self.finish()
     }
     
     func finish() {
+        self.willChangeValue(forKey: "isExecuting")
+        self.willChangeValue(forKey: "isFinished")
         _isExecuting = false
         _isFinished = true
+        self.didChangeValue(forKey: "isFinished")
+        self.didChangeValue(forKey: "isExecuting")
+    }
+    
+    // MARK: init
+    init(withAction action: GDOperationAction, delegate: GDOperationDelegate) {
+        self.operationAction = action
+        self.delegate = delegate
     }
 }
