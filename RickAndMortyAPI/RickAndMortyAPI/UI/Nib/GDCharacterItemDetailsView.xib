@@ -23,33 +23,30 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uVm-cj-5QZ">
-                    <rect key="frame" x="20" y="44.5" width="374" height="350"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5m-Ov-XtQ">
+                    <rect key="frame" x="20" y="44" width="374" height="351"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="uVm-cj-5QZ" secondAttribute="height" multiplier="374:351" id="c1D-NR-l4c"/>
+                        <constraint firstAttribute="width" secondItem="A5m-Ov-XtQ" secondAttribute="height" multiplier="374:351" id="7nI-4s-Rbw"/>
                     </constraints>
-                </imageView>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.74743150680000003" alpha="0.6016695205" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="N4t-g0-bXc" firstAttribute="top" secondItem="uVm-cj-5QZ" secondAttribute="bottom" constant="8" id="32E-s9-bmg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="N4t-g0-bXc" secondAttribute="trailing" constant="20" id="5DJ-CB-ybB"/>
-                <constraint firstItem="uVm-cj-5QZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="6vN-qP-hcI"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uVm-cj-5QZ" secondAttribute="trailing" constant="20" id="a41-UF-AC4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="A5m-Ov-XtQ" secondAttribute="trailing" constant="20" id="KMm-7T-qw5"/>
+                <constraint firstItem="A5m-Ov-XtQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="NQf-vl-UjQ"/>
+                <constraint firstItem="N4t-g0-bXc" firstAttribute="top" secondItem="A5m-Ov-XtQ" secondAttribute="bottom" constant="8" symbolic="YES" id="VLi-K5-W36"/>
                 <constraint firstItem="N4t-g0-bXc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="bNC-8x-q0R"/>
-                <constraint firstItem="uVm-cj-5QZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="ktA-6R-piW"/>
+                <constraint firstItem="A5m-Ov-XtQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="gsG-mT-XxL"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <connections>
+                <outlet property="containerPicView" destination="A5m-Ov-XtQ" id="B7K-ns-c9M"/>
                 <outlet property="nameLabel" destination="N4t-g0-bXc" id="FPJ-5g-YXa"/>
-                <outlet property="picView" destination="uVm-cj-5QZ" id="2Hp-kf-z27"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="101.78571428571428"/>
         </view>
     </objects>
-    <resources>
-        <image name="square.and.arrow.up.circle" catalog="system" width="128" height="121"/>
-    </resources>
 </document>

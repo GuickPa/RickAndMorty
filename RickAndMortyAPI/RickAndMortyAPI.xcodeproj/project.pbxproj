@@ -26,6 +26,10 @@
 		BE6E7049280F5E7200B641BC /* GDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E7048280F5E7200B641BC /* GDError.swift */; };
 		BE6E704B280F673600B641BC /* GDSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E704A280F673600B641BC /* GDSession.swift */; };
 		BE82F9152811F1A100C2EE89 /* GDLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82F9142811F1A100C2EE89 /* GDLogger.swift */; };
+		BE82F9172811F75200C2EE89 /* GDPicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE82F9162811F75200C2EE89 /* GDPicView.xib */; };
+		BE82F9192811F77600C2EE89 /* GDPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82F9182811F77600C2EE89 /* GDPicView.swift */; };
+		BE82F91B2811F7ED00C2EE89 /* GDViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82F91A2811F7ED00C2EE89 /* GDViewLoader.swift */; };
+		BE82F91D28120DE000C2EE89 /* GDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82F91C28120DE000C2EE89 /* GDView.swift */; };
 		BEACE94C28101BC100CFD02A /* GDOperationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEACE94B28101BC100CFD02A /* GDOperationAction.swift */; };
 		BEACE94E28101C4600CFD02A /* GDConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEACE94D28101C4600CFD02A /* GDConst.swift */; };
 		BEACE950281039B100CFD02A /* GDAPIOperationActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEACE94F281039B100CFD02A /* GDAPIOperationActionTests.swift */; };
@@ -80,6 +84,10 @@
 		BE6E7048280F5E7200B641BC /* GDError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDError.swift; sourceTree = "<group>"; };
 		BE6E704A280F673600B641BC /* GDSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDSession.swift; sourceTree = "<group>"; };
 		BE82F9142811F1A100C2EE89 /* GDLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDLogger.swift; sourceTree = "<group>"; };
+		BE82F9162811F75200C2EE89 /* GDPicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDPicView.xib; sourceTree = "<group>"; };
+		BE82F9182811F77600C2EE89 /* GDPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPicView.swift; sourceTree = "<group>"; };
+		BE82F91A2811F7ED00C2EE89 /* GDViewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDViewLoader.swift; sourceTree = "<group>"; };
+		BE82F91C28120DE000C2EE89 /* GDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDView.swift; sourceTree = "<group>"; };
 		BEACE94B28101BC100CFD02A /* GDOperationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDOperationAction.swift; sourceTree = "<group>"; };
 		BEACE94D28101C4600CFD02A /* GDConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDConst.swift; sourceTree = "<group>"; };
 		BEACE94F281039B100CFD02A /* GDAPIOperationActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDAPIOperationActionTests.swift; sourceTree = "<group>"; };
@@ -125,6 +133,7 @@
 				BE066FD52811F066009675D1 /* GDCharacterItemDetailsView.xib */,
 				BE066FD62811F066009675D1 /* GDMainViewController.xib */,
 				BE066FD72811F066009675D1 /* GDCharacterViewController.xib */,
+				BE82F9162811F75200C2EE89 /* GDPicView.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -210,6 +219,8 @@
 				BE6E7048280F5E7200B641BC /* GDError.swift */,
 				BEACE94D28101C4600CFD02A /* GDConst.swift */,
 				BE82F9142811F1A100C2EE89 /* GDLogger.swift */,
+				BE82F91A2811F7ED00C2EE89 /* GDViewLoader.swift */,
+				BE82F91C28120DE000C2EE89 /* GDView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 			children = (
 				BEE61FAA281096ED00D4C808 /* GDCharacterTableViewCell.swift */,
 				BE066FCD2811BC33009675D1 /* GDCharacterItemDetailsView.swift */,
+				BE82F9182811F77600C2EE89 /* GDPicView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE82F9172811F75200C2EE89 /* GDPicView.xib in Resources */,
 				BE066FDA2811F066009675D1 /* GDMainViewController.xib in Resources */,
 				BE066FDB2811F066009675D1 /* GDCharacterViewController.xib in Resources */,
 				BE066FD92811F066009675D1 /* GDCharacterItemDetailsView.xib in Resources */,
@@ -411,6 +424,7 @@
 				BEE61FAB281096ED00D4C808 /* GDCharacterTableViewCell.swift in Sources */,
 				BEE61FA628107D4200D4C808 /* GDMainViewController.swift in Sources */,
 				BE6E704B280F673600B641BC /* GDSession.swift in Sources */,
+				BE82F91B2811F7ED00C2EE89 /* GDViewLoader.swift in Sources */,
 				BE15313628118FE7007D2EE0 /* GDCharacterDetailsHandler.swift in Sources */,
 				BEE61FAE28109C2400D4C808 /* GDCharacter.swift in Sources */,
 				BEE61FB22810A4CC00D4C808 /* GDCharacterListHandler.swift in Sources */,
@@ -418,11 +432,13 @@
 				BE82F9152811F1A100C2EE89 /* GDLogger.swift in Sources */,
 				BEE61FB028109F2100D4C808 /* GDLoader.swift in Sources */,
 				BEACE94C28101BC100CFD02A /* GDOperationAction.swift in Sources */,
+				BE82F9192811F77600C2EE89 /* GDPicView.swift in Sources */,
 				BE066FCE2811BC33009675D1 /* GDCharacterItemDetailsView.swift in Sources */,
 				BE6E7044280F5AF700B641BC /* GDOperationQueueManager.swift in Sources */,
 				BEE61FB42810A77A00D4C808 /* GDDataDecoder.swift in Sources */,
 				BE6E7049280F5E7200B641BC /* GDError.swift in Sources */,
 				BE6E7042280F4A6B00B641BC /* GDOperation.swift in Sources */,
+				BE82F91D28120DE000C2EE89 /* GDView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

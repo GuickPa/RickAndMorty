@@ -19,19 +19,10 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJe-vj-uN4">
                         <rect key="frame" x="20" y="4" width="117" height="128"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mga-tO-RKW">
-                                <rect key="frame" x="0.0" y="0.5" width="117" height="127"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="117" id="B4N-WR-feC"/>
-                            <constraint firstAttribute="bottom" secondItem="mga-tO-RKW" secondAttribute="bottom" id="FPS-LN-GlA"/>
                             <constraint firstAttribute="height" constant="128" id="Vht-78-IvZ"/>
-                            <constraint firstAttribute="trailing" secondItem="mga-tO-RKW" secondAttribute="trailing" id="Wea-YG-mXk"/>
-                            <constraint firstItem="mga-tO-RKW" firstAttribute="leading" secondItem="EJe-vj-uN4" secondAttribute="leading" id="iFq-Pv-OjS"/>
-                            <constraint firstItem="mga-tO-RKW" firstAttribute="top" secondItem="EJe-vj-uN4" secondAttribute="top" id="uao-hF-dx8"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyW-yj-yqW">
@@ -51,14 +42,13 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="containerPicView" destination="EJe-vj-uN4" id="sXF-UF-LAj"/>
                 <outlet property="nameLabel" destination="gyW-yj-yqW" id="YYi-ea-5Jc"/>
-                <outlet property="picView" destination="mga-tO-RKW" id="mXd-BO-inS"/>
             </connections>
             <point key="canvasLocation" x="-299" y="18"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

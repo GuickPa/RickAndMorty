@@ -9,6 +9,14 @@ import UIKit
 
 class GDCharacterItemDetailsView: UIView {
     
-    @IBOutlet var picView:UIImageView!
     @IBOutlet var nameLabel:UILabel!
+    @IBOutlet weak var containerPicView:UIView!
+    weak var picView:GDPicView?
+    
+    func setupPicView() {
+        if self.picView == nil {
+            self.picView = GDCustomViewLoader.loadView()
+        }
+        self.picView?.setUpConstraint(superView: self.containerPicView)
+    }
 }

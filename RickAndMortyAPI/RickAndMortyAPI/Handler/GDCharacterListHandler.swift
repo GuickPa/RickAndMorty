@@ -37,10 +37,13 @@ class GDCharacterListHandler: GDListHandler {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let character = self.characterList?.results[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: GDCharacterTableViewCell.reuseIdentifier, for: indexPath) as! GDCharacterTableViewCell
         
-        cell.nameLabel.text = character?.name
+        if let character = self.characterList?.results[indexPath.row] {
+            cell.nameLabel.text = character.name
+            cell.setupPicView()
+            cell.picView?.load(urlToImage: character.image, loader: GDDataLoader(), handler: GDOperationQueueManager.instance)
+        }
         
         return cell
     }
