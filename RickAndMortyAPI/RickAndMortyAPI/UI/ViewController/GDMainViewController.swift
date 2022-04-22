@@ -28,12 +28,14 @@ class GDMainViewController: GDBaseViewController {
             forCellReuseIdentifier: GDCharacterTableViewCell.reuseIdentifier
         )
         // load character list and wait
+        self.loadingView.isHidden = false
         self.loader.delegate = self
-        self.loader.load(urlString: GDConst.characterListURLString, handler: GDOperationQueueManager.instance)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.loader.load(urlString: GDConst.characterListURLString, handler: GDOperationQueueManager.instance)
     }
 }
 

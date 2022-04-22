@@ -11,6 +11,7 @@ typealias GDOperationActionCallback = (Data?, Error?) -> Void
 
 protocol GDOperationAction {
     func main(sessionHandler: GDSessionHandler, callback: @escaping GDOperationActionCallback)
+    func cancel()
 }
 
 enum GDAPIOperationActionMethod: String {
@@ -45,7 +46,15 @@ class GDAPIOperationAction: GDOperationAction {
 #endif
             self.operationCallback(data, error)
             self.sessionHandler.endDataTask()
+            self.operationCallback = nil
         })
         self.httpDataTask.resume()
+    }
+    
+    func cancel() {
+        self.httpDataTask?.cancel()
+        self.operationCallback(nil, GDError.aborted)
+        self.sessionHandler.endDataTask()
+        self.operationCallback = nil
     }
 }

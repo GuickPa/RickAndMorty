@@ -33,14 +33,18 @@ class GDCharacterListHandler: GDListHandler {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.characterList?.info.count ?? 0
+        // return self.characterList?.info.count ?? 0
+        self.characterList?.results.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GDCharacterTableViewCell.reuseIdentifier, for: indexPath) as! GDCharacterTableViewCell
-        
+        cell.contentView.backgroundColor = indexPath.row % 2 == 0 ? GDConst.characterCellBGColor0 : GDConst.characterCellBGColor1
         if let character = self.characterList?.results[indexPath.row] {
             cell.nameLabel.text = character.name
+            cell.conditionLabel.text = "\(character.status) - \(character.species)"
+            cell.locationLabel.text = character.location.name
+            cell.firstAppearanceLabel.text = "Episode N. \(URL(string: character.episode[0])!.lastPathComponent)"
             cell.setupPicView()
             cell.picView?.load(urlToImage: character.image, loader: GDDataLoader(), handler: GDOperationQueueManager.instance)
         }

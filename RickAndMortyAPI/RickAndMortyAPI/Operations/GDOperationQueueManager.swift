@@ -25,7 +25,7 @@ class GDOperationQueueManager: GDOperationQueueHandler {
     
     private init(){
         self.queue = OperationQueue()
-        self.queue.maxConcurrentOperationCount = 1
+        self.queue.maxConcurrentOperationCount = 10
     }
     
     func addToQueue(_ operation: GDOperationHandler) {

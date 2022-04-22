@@ -12,6 +12,9 @@ class GDCharacterTableViewCell: UITableViewCell {
     
     @IBOutlet weak var containerPicView:UIView!
     @IBOutlet weak var nameLabel:UILabel!
+    @IBOutlet weak var conditionLabel:UILabel!
+    @IBOutlet weak var locationLabel:UILabel!
+    @IBOutlet weak var firstAppearanceLabel:UILabel!
     weak var picView:GDPicView?
     
     func setupPicView() {
@@ -19,6 +22,7 @@ class GDCharacterTableViewCell: UITableViewCell {
             self.picView = GDCustomViewLoader.loadView()
         }
         self.picView?.setUpConstraint(superView: self.containerPicView)
+        self.needsUpdateConstraints()
     }
     
     override func prepareForReuse() {

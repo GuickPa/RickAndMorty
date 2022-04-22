@@ -41,6 +41,7 @@
 		BEE61FB22810A4CC00D4C808 /* GDCharacterListHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE61FB12810A4CC00D4C808 /* GDCharacterListHandler.swift */; };
 		BEE61FB42810A77A00D4C808 /* GDDataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE61FB32810A77A00D4C808 /* GDDataDecoder.swift */; };
 		BEE61FB62810B29900D4C808 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE61FB52810B29900D4C808 /* ViewController.swift */; };
+		BEF33513281346E6003DC99D /* GDColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF33512281346E6003DC99D /* GDColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		BEE61FB12810A4CC00D4C808 /* GDCharacterListHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCharacterListHandler.swift; sourceTree = "<group>"; };
 		BEE61FB32810A77A00D4C808 /* GDDataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDDataDecoder.swift; sourceTree = "<group>"; };
 		BEE61FB52810B29900D4C808 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEF33512281346E6003DC99D /* GDColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				BE82F9142811F1A100C2EE89 /* GDLogger.swift */,
 				BE82F91A2811F7ED00C2EE89 /* GDViewLoader.swift */,
 				BE82F91C28120DE000C2EE89 /* GDView.swift */,
+				BEF33512281346E6003DC99D /* GDColor.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				BEE61FAB281096ED00D4C808 /* GDCharacterTableViewCell.swift in Sources */,
 				BEE61FA628107D4200D4C808 /* GDMainViewController.swift in Sources */,
 				BE6E704B280F673600B641BC /* GDSession.swift in Sources */,
+				BEF33513281346E6003DC99D /* GDColor.swift in Sources */,
 				BE82F91B2811F7ED00C2EE89 /* GDViewLoader.swift in Sources */,
 				BE15313628118FE7007D2EE0 /* GDCharacterDetailsHandler.swift in Sources */,
 				BEE61FAE28109C2400D4C808 /* GDCharacter.swift in Sources */,
@@ -616,7 +620,6 @@
 				INFOPLIST_FILE = RickAndMortyAPI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -645,7 +648,6 @@
 				INFOPLIST_FILE = RickAndMortyAPI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

@@ -11,7 +11,7 @@ protocol GDOperationHandler: Operation {
     func finish()
 }
 
-protocol GDOperationDelegate {
+protocol GDOperationDelegate: AnyObject {
     func operationStarted(_ operation: GDOperation)
     func operationCompleted(_ operation: GDOperation, withData data:Data?)
     func operationFailed(_ operation: GDOperation, withError error:Error?)
@@ -24,7 +24,7 @@ class GDOperation: Operation, GDOperationHandler {
     private var _isFinished:Bool = false
     private var _isCancelled:Bool = false
     
-    private var delegate:GDOperationDelegate
+    private weak var delegate:GDOperationDelegate?
     
     private var operationAction:GDOperationAction
     
@@ -59,7 +59,7 @@ class GDOperation: Operation, GDOperationHandler {
         if self.isCancelled {
             _isExecuting = false
             _isFinished = true
-            self.delegate.operationCancelled(self)
+            self.delegate?.operationCancelled(self)
         }
         else {
             _isExecuting = true
@@ -71,15 +71,15 @@ class GDOperation: Operation, GDOperationHandler {
     override func main() {
         if self.isCancelled {
             self.finish()
-            self.delegate.operationCancelled(self)
+            self.delegate?.operationCancelled(self)
         }
         else {
-            self.delegate.operationStarted(self)
+            self.delegate?.operationStarted(self)
             self.operationAction.main(sessionHandler: GDSession()) { data, error in
                 if let e = error {
-                    self.delegate.operationFailed(self, withError: e)
+                    self.delegate?.operationFailed(self, withError: e)
                 } else {
-                    self.delegate.operationCompleted(self, withData: data)
+                    self.delegate?.operationCompleted(self, withData: data)
                 }
                 self.finish()
             }
@@ -100,7 +100,7 @@ class GDOperation: Operation, GDOperationHandler {
     }
     
     // MARK: init
-    init(withAction action: GDOperationAction, delegate: GDOperationDelegate) {
+    init(withAction action: GDOperationAction, delegate: GDOperationDelegate?) {
         self.operationAction = action
         self.delegate = delegate
     }

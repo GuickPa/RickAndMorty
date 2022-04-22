@@ -41,6 +41,7 @@ extension GDPicView: GDLoaderDelegate {
             if let data = data, let image = UIImage(data: data) {
                 self.imageView.image = image
             }
+            self.loader = nil
         }
     }
     
@@ -49,6 +50,7 @@ extension GDPicView: GDLoaderDelegate {
             self.loadingView.layer.removeAllAnimations()
             self.loadingView.isHidden = true
             self.imageView.image = UIImage(named: "rickandmorty")
+            self.loader = nil
         }
     }
 }
