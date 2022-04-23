@@ -43,3 +43,23 @@ struct GDCharacterList: Codable {
     var info: GDCharacterListInfo
     var results: [GDCharacterListItem]
 }
+
+struct GDLocation: Codable {
+    var id: Int
+    var name: String
+    var type: String
+    var dimension: String
+    var residents: [String]
+    var url: String
+    var created: String
+}
+
+struct GDEpisode: Codable {
+    var id: Int
+    var name: String
+    var air_date: String
+    var episode: String
+    var characters: [String]
+    var url: String
+    var created: String
+}

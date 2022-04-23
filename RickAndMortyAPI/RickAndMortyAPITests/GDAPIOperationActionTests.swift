@@ -18,6 +18,10 @@ class TestSessionHandler: GDSessionHandler {
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         return self.session.dataTask(with: request, completionHandler: completionHandler)
     }
+    
+    func endDataTask() {
+        
+    }
 }
 
 class GDAPIOperationActionTests: XCTestCase {

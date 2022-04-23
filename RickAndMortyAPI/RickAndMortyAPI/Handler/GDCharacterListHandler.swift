@@ -43,8 +43,7 @@ class GDCharacterListHandler: GDListHandler {
         if let character = self.characterList?.results[indexPath.row] {
             cell.nameLabel.text = character.name
             cell.conditionLabel.text = "\(character.status) - \(character.species)"
-            cell.locationLabel.text = character.location.name
-            cell.firstAppearanceLabel.text = "Episode N. \(URL(string: character.episode[0])!.lastPathComponent)"
+            cell.genderLabel.text = character.gender
             cell.setupPicView()
             cell.picView?.load(urlToImage: character.image, loader: GDDataLoader(), handler: GDOperationQueueManager.instance)
         }

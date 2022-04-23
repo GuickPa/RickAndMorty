@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GDCharacterViewController" customModule="RickAndMortyAPI" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="e4O-Ut-6Jv" id="9HP-VK-mFH"/>
                 <outlet property="loadingView" destination="hsE-xW-UnT" id="xRi-Wy-cFJ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4gO-Pz-Q4f"/>
             </connections>
@@ -20,6 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4O-Ut-6Jv">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsE-xW-UnT">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
@@ -40,9 +45,13 @@
                 <constraint firstAttribute="bottom" secondItem="hsE-xW-UnT" secondAttribute="bottom" id="Csc-cg-Pyo"/>
                 <constraint firstItem="hsE-xW-UnT" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Cwc-Ys-DOo"/>
                 <constraint firstItem="hsE-xW-UnT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Pjv-LI-xdX"/>
+                <constraint firstItem="e4O-Ut-6Jv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Vak-5a-uqo"/>
                 <constraint firstItem="hsE-xW-UnT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YOQ-oj-toX"/>
+                <constraint firstItem="e4O-Ut-6Jv" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="eCg-Gj-cV3"/>
+                <constraint firstItem="e4O-Ut-6Jv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="owg-cC-Hq5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="e4O-Ut-6Jv" secondAttribute="trailing" id="zRv-Tq-8tQ"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="46"/>
+            <point key="canvasLocation" x="131.8840579710145" y="45.535714285714285"/>
         </view>
     </objects>
     <resources>

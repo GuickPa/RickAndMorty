@@ -13,11 +13,19 @@ class TestOperationAction: GDOperationAction {
         let data = "TEST OK".data(using: .utf8)
         callback(data, nil)
     }
+    
+    func cancel() {
+        
+    }
 }
 
 class TestOperationErrorAction: GDOperationAction {
     func main(sessionHandler: GDSessionHandler, callback: @escaping GDOperationActionCallback) {
         callback(nil, GDError.instanceError)
+    }
+    
+    func cancel() {
+        
     }
 }
 

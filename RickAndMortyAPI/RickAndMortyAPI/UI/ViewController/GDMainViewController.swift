@@ -56,11 +56,9 @@ extension GDMainViewController: UITableViewDelegate {
         if let character = self.listHandler.list?.results[indexPath.row] {
             let loader = GDDataLoader()
             let characterHandler = GDCharacterDetailsHandler(characterId: character.id, decoder: GDGenericDataDecoder())
-            self.navigationController?.pushViewController(
-                GDCharacterViewController(loader: loader, detailsHandler: characterHandler),
-                //UIViewController(nibName: "GDCharacterViewController", bundle: nil),
-                animated: true
-            )
+            let tbvc = GDTabBarViewController()
+            tbvc.setViewControllers([GDCharacterViewController(loader: loader, detailsHandler: characterHandler)], animated: false)
+            self.navigationController?.pushViewController(tbvc, animated: true)
         }
     }
 }

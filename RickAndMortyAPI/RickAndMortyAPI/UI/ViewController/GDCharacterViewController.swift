@@ -8,6 +8,7 @@
 import UIKit
 
 class GDCharacterViewController: GDBaseViewController {
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var loadingView: UIView!
     
     private var detailsHandler: GDDetailsHandler
@@ -47,7 +48,7 @@ extension GDCharacterViewController: GDLoaderDelegate {
         }
         DispatchQueue.main.async {
             self.loadingView.isHidden = true
-            let detailsView = self.detailsHandler.detailsView(superView: self.view)
+            _ = self.detailsHandler.detailsView(superView: self.containerView)
         }
     }
     
