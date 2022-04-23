@@ -22,6 +22,8 @@
 		BE4006EF281432D500671820 /* GDLocationItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006EE281432D500671820 /* GDLocationItemDetailsView.swift */; };
 		BE4006F12814334D00671820 /* GDLocationItemDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4006F02814334D00671820 /* GDLocationItemDetailsView.xib */; };
 		BE4006F32814687900671820 /* GDString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006F22814687900671820 /* GDString.swift */; };
+		BE4006F6281486C600671820 /* GDCharacterDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006F5281486C600671820 /* GDCharacterDataLoader.swift */; };
+		BE4006F82814870000671820 /* GDDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006F72814870000671820 /* GDDataLoader.swift */; };
 		BE6E700C280F470A00B641BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E700B280F470A00B641BC /* AppDelegate.swift */; };
 		BE6E7015280F470B00B641BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6E7014280F470B00B641BC /* Assets.xcassets */; };
 		BE6E7018280F470B00B641BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6E7016280F470B00B641BC /* LaunchScreen.storyboard */; };
@@ -84,6 +86,8 @@
 		BE4006EE281432D500671820 /* GDLocationItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDLocationItemDetailsView.swift; sourceTree = "<group>"; };
 		BE4006F02814334D00671820 /* GDLocationItemDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDLocationItemDetailsView.xib; sourceTree = "<group>"; };
 		BE4006F22814687900671820 /* GDString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDString.swift; sourceTree = "<group>"; };
+		BE4006F5281486C600671820 /* GDCharacterDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCharacterDataLoader.swift; sourceTree = "<group>"; };
+		BE4006F72814870000671820 /* GDDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDDataLoader.swift; sourceTree = "<group>"; };
 		BE6E7008280F470A00B641BC /* RickAndMortyAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6E700B280F470A00B641BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE6E7014280F470B00B641BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,6 +178,16 @@
 			path = CharacterDetails;
 			sourceTree = "<group>";
 		};
+		BE4006F92814870C00671820 /* Loaders */ = {
+			isa = PBXGroup;
+			children = (
+				BEE61FAF28109F2100D4C808 /* GDLoader.swift */,
+				BE4006F72814870000671820 /* GDDataLoader.swift */,
+				BE4006F5281486C600671820 /* GDCharacterDataLoader.swift */,
+			);
+			path = Loaders;
+			sourceTree = "<group>";
+		};
 		BE6E6FFF280F470A00B641BC = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +265,7 @@
 		BE6E7047280F5E6700B641BC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BEE61FB32810A77A00D4C808 /* GDDataDecoder.swift */,
 				BE6E7048280F5E7200B641BC /* GDError.swift */,
 				BEACE94D28101C4600CFD02A /* GDConst.swift */,
 				BE82F9142811F1A100C2EE89 /* GDLogger.swift */,
@@ -305,10 +320,9 @@
 		BEE61FA728107EFD00D4C808 /* Handler */ = {
 			isa = PBXGroup;
 			children = (
+				BE4006F92814870C00671820 /* Loaders */,
 				BE4006DE2813E65700671820 /* CharacterDetails */,
-				BEE61FAF28109F2100D4C808 /* GDLoader.swift */,
 				BEE61FB12810A4CC00D4C808 /* GDCharacterListHandler.swift */,
-				BEE61FB32810A77A00D4C808 /* GDDataDecoder.swift */,
 				BE15313528118FE7007D2EE0 /* GDCharacterDetailsHandler.swift */,
 			);
 			path = Handler;
@@ -461,12 +475,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEE61FB62810B29900D4C808 /* GDBaseViewController.swift in Sources */,
+				BE4006F82814870000671820 /* GDDataLoader.swift in Sources */,
 				BE153134281186B2007D2EE0 /* GDCharacterViewController.swift in Sources */,
 				BE6E700C280F470A00B641BC /* AppDelegate.swift in Sources */,
 				BEE61FAB281096ED00D4C808 /* GDCharacterTableViewCell.swift in Sources */,
 				BEE61FA628107D4200D4C808 /* GDMainViewController.swift in Sources */,
 				BE4006E42813EB1600671820 /* GDTabBarController.swift in Sources */,
 				BE6E704B280F673600B641BC /* GDSession.swift in Sources */,
+				BE4006F6281486C600671820 /* GDCharacterDataLoader.swift in Sources */,
 				BE4006F32814687900671820 /* GDString.swift in Sources */,
 				BEF33513281346E6003DC99D /* GDColor.swift in Sources */,
 				BE82F91B2811F7ED00C2EE89 /* GDViewLoader.swift in Sources */,

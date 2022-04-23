@@ -1,27 +1,25 @@
 //
-//  GDCharacterListLoader.swift
+//  GDCharacterDataLoader.swift
 //  RickAndMortyAPI
 //
-//  Created by Guglielmo Deletis on 20/04/22.
+//  Created by Guglielmo Deletis on 23/04/22.
 //
 
 import Foundation
 
-protocol GDLoader {
-    var delegate: GDLoaderDelegate! { get set }
-    func load(urlString: String, handler: GDOperationQueueHandler)
-    func cancel()
+enum GDCharacterDataType {
+    case personalInfo
+    case origin
+    case location
+    case chapters
 }
 
-protocol GDLoaderDelegate: AnyObject {
-    func loaderDidStart(_ loader: GDLoader)
-    func loaderDidLoad(_ loader: GDLoader, data: Data?)
-    func loaderFailed(_ loader: GDLoader, error: Error)
-}
-
-class GDDataLoader {
+class GDCharacterDataLoader {
     weak var _delegate: GDLoaderDelegate!
     var operation: GDOperation!
+    
+    private var dataToLoad: [GDCharacterDataType]
+    private var character: GDCharacter
     
     var delegate: GDLoaderDelegate! {
         get {
@@ -31,10 +29,15 @@ class GDDataLoader {
             _delegate = newValue
         }
     }
+    
+    init(characterItem:GDCharacter, toLoad: [GDCharacterDataType]) {
+        self.dataToLoad = toLoad
+        self.character = characterItem
+    }
 }
 
 //MARK: GDLoader
-extension GDDataLoader: GDLoader {
+extension GDCharacterDataLoader: GDLoader {
     func load(urlString: String, handler: GDOperationQueueHandler) {
         do {
             let action = try GDAPIOperationAction(urlString, method: .get)
@@ -53,7 +56,7 @@ extension GDDataLoader: GDLoader {
 }
 
 //MARK: GDOperationDelegate
-extension GDDataLoader: GDOperationDelegate {
+extension GDCharacterDataLoader: GDOperationDelegate {
     func operationStarted(_ operation: GDOperation) {
         self.delegate.loaderDidStart(self)
     }
