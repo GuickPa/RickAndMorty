@@ -9,8 +9,10 @@ import UIKit
 
 class GDCharacterItemDetailsView: UIView {
     
-    @IBOutlet var nameLabel:UILabel!
     @IBOutlet weak var containerPicView:UIView!
+    @IBOutlet weak var nameLabel:UILabel!
+    @IBOutlet weak var conditionLabel:UILabel!
+    @IBOutlet weak var genderLabel:UILabel!
     weak var picView:GDPicView?
     
     func setupPicView() {

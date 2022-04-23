@@ -15,7 +15,13 @@
 		BE153134281186B2007D2EE0 /* GDCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE153133281186B2007D2EE0 /* GDCharacterViewController.swift */; };
 		BE15313628118FE7007D2EE0 /* GDCharacterDetailsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15313528118FE7007D2EE0 /* GDCharacterDetailsHandler.swift */; };
 		BE4006E02813E84500671820 /* GDDetailsDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006DF2813E84500671820 /* GDDetailsDataHandler.swift */; };
-		BE4006E42813EB1600671820 /* GDTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006E32813EB1600671820 /* GDTabBarViewController.swift */; };
+		BE4006E42813EB1600671820 /* GDTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006E32813EB1600671820 /* GDTabBarController.swift */; };
+		BE4006E92813EFAF00671820 /* GDDetailsVCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006E82813EFAF00671820 /* GDDetailsVCHandler.swift */; };
+		BE4006EC2813F79900671820 /* GDLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006EA2813F79900671820 /* GDLocationViewController.swift */; };
+		BE4006ED2813F79900671820 /* GDLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4006EB2813F79900671820 /* GDLocationViewController.xib */; };
+		BE4006EF281432D500671820 /* GDLocationItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006EE281432D500671820 /* GDLocationItemDetailsView.swift */; };
+		BE4006F12814334D00671820 /* GDLocationItemDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4006F02814334D00671820 /* GDLocationItemDetailsView.xib */; };
+		BE4006F32814687900671820 /* GDString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006F22814687900671820 /* GDString.swift */; };
 		BE6E700C280F470A00B641BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E700B280F470A00B641BC /* AppDelegate.swift */; };
 		BE6E7015280F470B00B641BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6E7014280F470B00B641BC /* Assets.xcassets */; };
 		BE6E7018280F470B00B641BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6E7016280F470B00B641BC /* LaunchScreen.storyboard */; };
@@ -41,7 +47,7 @@
 		BEE61FB028109F2100D4C808 /* GDLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE61FAF28109F2100D4C808 /* GDLoader.swift */; };
 		BEE61FB22810A4CC00D4C808 /* GDCharacterListHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE61FB12810A4CC00D4C808 /* GDCharacterListHandler.swift */; };
 		BEE61FB42810A77A00D4C808 /* GDDataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE61FB32810A77A00D4C808 /* GDDataDecoder.swift */; };
-		BEE61FB62810B29900D4C808 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE61FB52810B29900D4C808 /* ViewController.swift */; };
+		BEE61FB62810B29900D4C808 /* GDBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE61FB52810B29900D4C808 /* GDBaseViewController.swift */; };
 		BEF33513281346E6003DC99D /* GDColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF33512281346E6003DC99D /* GDColor.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +77,13 @@
 		BE153133281186B2007D2EE0 /* GDCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCharacterViewController.swift; sourceTree = "<group>"; };
 		BE15313528118FE7007D2EE0 /* GDCharacterDetailsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCharacterDetailsHandler.swift; sourceTree = "<group>"; };
 		BE4006DF2813E84500671820 /* GDDetailsDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDDetailsDataHandler.swift; sourceTree = "<group>"; };
-		BE4006E32813EB1600671820 /* GDTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDTabBarViewController.swift; sourceTree = "<group>"; };
+		BE4006E32813EB1600671820 /* GDTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDTabBarController.swift; sourceTree = "<group>"; };
+		BE4006E82813EFAF00671820 /* GDDetailsVCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDDetailsVCHandler.swift; sourceTree = "<group>"; };
+		BE4006EA2813F79900671820 /* GDLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDLocationViewController.swift; sourceTree = "<group>"; };
+		BE4006EB2813F79900671820 /* GDLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDLocationViewController.xib; sourceTree = "<group>"; };
+		BE4006EE281432D500671820 /* GDLocationItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDLocationItemDetailsView.swift; sourceTree = "<group>"; };
+		BE4006F02814334D00671820 /* GDLocationItemDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDLocationItemDetailsView.xib; sourceTree = "<group>"; };
+		BE4006F22814687900671820 /* GDString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDString.swift; sourceTree = "<group>"; };
 		BE6E7008280F470A00B641BC /* RickAndMortyAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6E700B280F470A00B641BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE6E7014280F470B00B641BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,7 +113,7 @@
 		BEE61FAF28109F2100D4C808 /* GDLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDLoader.swift; sourceTree = "<group>"; };
 		BEE61FB12810A4CC00D4C808 /* GDCharacterListHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCharacterListHandler.swift; sourceTree = "<group>"; };
 		BEE61FB32810A77A00D4C808 /* GDDataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDDataDecoder.swift; sourceTree = "<group>"; };
-		BEE61FB52810B29900D4C808 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEE61FB52810B29900D4C808 /* GDBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDBaseViewController.swift; sourceTree = "<group>"; };
 		BEF33512281346E6003DC99D /* GDColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,8 +147,10 @@
 			children = (
 				BE066FD42811F066009675D1 /* GDCharacterTableViewCell.xib */,
 				BE066FD52811F066009675D1 /* GDCharacterItemDetailsView.xib */,
+				BE4006F02814334D00671820 /* GDLocationItemDetailsView.xib */,
 				BE066FD62811F066009675D1 /* GDMainViewController.xib */,
 				BE066FD72811F066009675D1 /* GDCharacterViewController.xib */,
+				BE4006EB2813F79900671820 /* GDLocationViewController.xib */,
 				BE82F9162811F75200C2EE89 /* GDPicView.xib */,
 			);
 			path = Nib;
@@ -146,6 +160,16 @@
 			isa = PBXGroup;
 			children = (
 				BE4006DF2813E84500671820 /* GDDetailsDataHandler.swift */,
+				BE4006E82813EFAF00671820 /* GDDetailsVCHandler.swift */,
+			);
+			path = CharacterDetails;
+			sourceTree = "<group>";
+		};
+		BE4006F42814779300671820 /* CharacterDetails */ = {
+			isa = PBXGroup;
+			children = (
+				BE153133281186B2007D2EE0 /* GDCharacterViewController.swift */,
+				BE4006EA2813F79900671820 /* GDLocationViewController.swift */,
 			);
 			path = CharacterDetails;
 			sourceTree = "<group>";
@@ -232,6 +256,7 @@
 				BE82F9142811F1A100C2EE89 /* GDLogger.swift */,
 				BE82F91A2811F7ED00C2EE89 /* GDViewLoader.swift */,
 				BEF33512281346E6003DC99D /* GDColor.swift */,
+				BE4006F22814687900671820 /* GDString.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -249,6 +274,7 @@
 			children = (
 				BEE61FAA281096ED00D4C808 /* GDCharacterTableViewCell.swift */,
 				BE066FCD2811BC33009675D1 /* GDCharacterItemDetailsView.swift */,
+				BE4006EE281432D500671820 /* GDLocationItemDetailsView.swift */,
 				BE82F9182811F77600C2EE89 /* GDPicView.swift */,
 				BE82F91C28120DE000C2EE89 /* GDView.swift */,
 			);
@@ -258,10 +284,10 @@
 		BEE61FA328107D1700D4C808 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BEE61FB52810B29900D4C808 /* ViewController.swift */,
+				BE4006F42814779300671820 /* CharacterDetails */,
+				BEE61FB52810B29900D4C808 /* GDBaseViewController.swift */,
 				BEE61FA528107D4200D4C808 /* GDMainViewController.swift */,
-				BE153133281186B2007D2EE0 /* GDCharacterViewController.swift */,
-				BE4006E32813EB1600671820 /* GDTabBarViewController.swift */,
+				BE4006E32813EB1600671820 /* GDTabBarController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -402,9 +428,11 @@
 			files = (
 				BE82F9172811F75200C2EE89 /* GDPicView.xib in Resources */,
 				BE066FDA2811F066009675D1 /* GDMainViewController.xib in Resources */,
+				BE4006ED2813F79900671820 /* GDLocationViewController.xib in Resources */,
 				BE066FDB2811F066009675D1 /* GDCharacterViewController.xib in Resources */,
 				BE066FD92811F066009675D1 /* GDCharacterItemDetailsView.xib in Resources */,
 				BE066FD82811F066009675D1 /* GDCharacterTableViewCell.xib in Resources */,
+				BE4006F12814334D00671820 /* GDLocationItemDetailsView.xib in Resources */,
 				BE6E7018280F470B00B641BC /* LaunchScreen.storyboard in Resources */,
 				BE6E7046280F5E2500B641BC /* Localizable.strings in Resources */,
 				BE6E7015280F470B00B641BC /* Assets.xcassets in Resources */,
@@ -432,21 +460,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEE61FB62810B29900D4C808 /* ViewController.swift in Sources */,
+				BEE61FB62810B29900D4C808 /* GDBaseViewController.swift in Sources */,
 				BE153134281186B2007D2EE0 /* GDCharacterViewController.swift in Sources */,
 				BE6E700C280F470A00B641BC /* AppDelegate.swift in Sources */,
 				BEE61FAB281096ED00D4C808 /* GDCharacterTableViewCell.swift in Sources */,
 				BEE61FA628107D4200D4C808 /* GDMainViewController.swift in Sources */,
-				BE4006E42813EB1600671820 /* GDTabBarViewController.swift in Sources */,
+				BE4006E42813EB1600671820 /* GDTabBarController.swift in Sources */,
 				BE6E704B280F673600B641BC /* GDSession.swift in Sources */,
+				BE4006F32814687900671820 /* GDString.swift in Sources */,
 				BEF33513281346E6003DC99D /* GDColor.swift in Sources */,
 				BE82F91B2811F7ED00C2EE89 /* GDViewLoader.swift in Sources */,
 				BE15313628118FE7007D2EE0 /* GDCharacterDetailsHandler.swift in Sources */,
 				BEE61FAE28109C2400D4C808 /* GDCharacter.swift in Sources */,
+				BE4006E92813EFAF00671820 /* GDDetailsVCHandler.swift in Sources */,
 				BE4006E02813E84500671820 /* GDDetailsDataHandler.swift in Sources */,
 				BEE61FB22810A4CC00D4C808 /* GDCharacterListHandler.swift in Sources */,
 				BEACE94E28101C4600CFD02A /* GDConst.swift in Sources */,
 				BE82F9152811F1A100C2EE89 /* GDLogger.swift in Sources */,
+				BE4006EF281432D500671820 /* GDLocationItemDetailsView.swift in Sources */,
 				BEE61FB028109F2100D4C808 /* GDLoader.swift in Sources */,
 				BEACE94C28101BC100CFD02A /* GDOperationAction.swift in Sources */,
 				BE82F9192811F77600C2EE89 /* GDPicView.swift in Sources */,
@@ -455,6 +486,7 @@
 				BEE61FB42810A77A00D4C808 /* GDDataDecoder.swift in Sources */,
 				BE6E7049280F5E7200B641BC /* GDError.swift in Sources */,
 				BE6E7042280F4A6B00B641BC /* GDOperation.swift in Sources */,
+				BE4006EC2813F79900671820 /* GDLocationViewController.swift in Sources */,
 				BE82F91D28120DE000C2EE89 /* GDView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

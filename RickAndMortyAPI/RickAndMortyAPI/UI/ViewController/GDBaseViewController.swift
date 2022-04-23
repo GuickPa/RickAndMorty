@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol GDDetailsLoaderViewController: UIViewController {
+    associatedtype T:GDDetailsHandler
+    
+    var loaders:[GDLoader] { get }
+    
+    init(loaders:[GDLoader], detailsHandler: T)
+}
+
 class GDBaseViewController: UIViewController {
     var loader: GDLoader
     

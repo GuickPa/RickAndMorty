@@ -54,10 +54,7 @@ extension GDMainViewController: UITableViewDataSource {
 extension GDMainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let character = self.listHandler.list?.results[indexPath.row] {
-            let loader = GDDataLoader()
-            let characterHandler = GDCharacterDetailsHandler(characterId: character.id, decoder: GDGenericDataDecoder())
-            let tbvc = GDTabBarViewController()
-            tbvc.setViewControllers([GDCharacterViewController(loader: loader, detailsHandler: characterHandler)], animated: false)
+            let tbvc = GDTabBarController(characterItem: character)
             self.navigationController?.pushViewController(tbvc, animated: true)
         }
     }

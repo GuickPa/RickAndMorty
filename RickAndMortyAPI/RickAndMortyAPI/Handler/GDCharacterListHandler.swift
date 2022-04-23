@@ -42,7 +42,7 @@ class GDCharacterListHandler: GDListHandler {
         cell.contentView.backgroundColor = indexPath.row % 2 == 0 ? GDConst.characterCellBGColor0 : GDConst.characterCellBGColor1
         if let character = self.characterList?.results[indexPath.row] {
             cell.nameLabel.text = character.name
-            cell.conditionLabel.text = "\(character.status) - \(character.species)"
+            cell.conditionLabel.text = character.condition()
             cell.genderLabel.text = character.gender
             cell.setupPicView()
             cell.picView?.load(urlToImage: character.image, loader: GDDataLoader(), handler: GDOperationQueueManager.instance)

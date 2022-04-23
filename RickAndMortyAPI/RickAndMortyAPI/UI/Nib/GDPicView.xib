@@ -33,8 +33,8 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="imageView" destination="wn9-Uy-tPf" id="O0U-D5-ef2"/>
-                <outlet property="loadingView" destination="kB5-hO-O6W" id="oCm-pZ-EU4"/>
+                <outlet property="imageView" destination="wn9-Uy-tPf" id="W5M-nI-eWv"/>
+                <outlet property="loadingView" destination="kB5-hO-O6W" id="43z-Hx-jQE"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
         </view>

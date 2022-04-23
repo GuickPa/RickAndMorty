@@ -12,6 +12,7 @@ class GDConst {
     static let baseURLString = "https://rickandmortyapi.com/api"
     static let characterListURLString = "\(GDConst.baseURLString)/character"
     static let characterDetailsURLString = "\(GDConst.baseURLString)/character/%d"
+    static let locationDetailsURLString = "\(GDConst.baseURLString)/location/%d"
     
     // colors
     static let characterCellBGColor0 = UIColor(hexString: "3C3E44")

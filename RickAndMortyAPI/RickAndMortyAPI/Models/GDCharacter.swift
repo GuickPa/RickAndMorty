@@ -17,7 +17,7 @@ struct GDCharacterLocation: Codable {
     var url: String
 }
 
-struct GDCharacterListItem: Codable {
+struct GDCharacter: Codable {
     var id: Int
     var name: String
     var status: String
@@ -30,6 +30,10 @@ struct GDCharacterListItem: Codable {
     var episode: [String]
     var url: String
     var created: String
+    
+    func condition() -> String {
+        return "\(self.status) - \(self.species)"
+    }
 }
 
 struct GDCharacterListInfo: Codable {
@@ -41,7 +45,7 @@ struct GDCharacterListInfo: Codable {
 
 struct GDCharacterList: Codable {
     var info: GDCharacterListInfo
-    var results: [GDCharacterListItem]
+    var results: [GDCharacter]
 }
 
 struct GDLocation: Codable {

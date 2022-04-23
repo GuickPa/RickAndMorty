@@ -8,8 +8,8 @@
 import UIKit
 
 class GDPicView: UIView {
-    @IBOutlet var imageView:UIImageView!
-    @IBOutlet var loadingView: UIImageView!
+    @IBOutlet weak var imageView:UIImageView!
+    @IBOutlet weak var loadingView: UIImageView!
     
     private var loader:GDLoader!
     

@@ -7,13 +7,10 @@
 
 import UIKit
 
-class GDCharacterViewController: GDBaseViewController {
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var loadingView: UIView!
+class GDCharacterViewController<T:GDDetailsHandler>: GDBaseViewController {
+    private var detailsHandler: T
     
-    private var detailsHandler: GDDetailsHandler
-    
-    init(loader:GDLoader, detailsHandler: GDDetailsHandler) {
+    init(loader:GDLoader, detailsHandler: T) {
         self.detailsHandler = detailsHandler
         super.init(loader: loader, nibName: "GDCharacterViewController", bundle: nil)
     }
@@ -30,16 +27,13 @@ class GDCharacterViewController: GDBaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // load character list and wait
-        self.loader.load(urlString: String(format: GDConst.characterDetailsURLString, self.detailsHandler.characterId), handler: GDOperationQueueManager.instance)
+        self.loader.load(urlString: String(format: GDConst.characterDetailsURLString, self.detailsHandler.itemId), handler: GDOperationQueueManager.instance)
     }
 }
 
 //MARK: GDLoaderDelegate
 extension GDCharacterViewController: GDLoaderDelegate {
     func loaderDidStart(_ loader: GDLoader) {
-        DispatchQueue.main.async {
-            self.loadingView.isHidden = false
-        }
     }
     
     func loaderDidLoad(_ loader: GDLoader, data: Data?) {
@@ -47,14 +41,12 @@ extension GDCharacterViewController: GDLoaderDelegate {
             self.detailsHandler.detailsFromData(d)
         }
         DispatchQueue.main.async {
-            self.loadingView.isHidden = true
-            _ = self.detailsHandler.detailsView(superView: self.containerView)
+            _ = self.detailsHandler.detailsView(superView: self.view)
         }
     }
     
     func loaderFailed(_ loader: GDLoader, error: Error) {
         DispatchQueue.main.async {
-            self.loadingView.isHidden = true
             self.showError(error)
         }
     }
