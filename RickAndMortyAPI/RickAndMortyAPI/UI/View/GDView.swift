@@ -18,3 +18,35 @@ extension UIView {
         superView.addConstraints([top, bottom, left, right])
     }
 }
+
+protocol GDDetailsViewDelegate: AnyObject {
+    func viewDidStartLoading(_ detailsView: GDDetailsView)
+    func viewDidEndLoading(_ detailsView: GDDetailsView, error: Error?)
+}
+
+class GDDetailsView: UIView {
+    private weak var _delegate: GDDetailsViewDelegate?
+    
+    var delegate: GDDetailsViewDelegate? {
+        get {
+            return _delegate
+        }
+        set {
+            _delegate = newValue
+        }
+    }
+}
+
+extension GDDetailsView: GDLoaderDelegate {
+    func loaderDidStart(_ loader: GDLoader) {
+        self.delegate?.viewDidStartLoading(self)
+    }
+    
+    func loaderDidLoad(_ loader: GDLoader, data: [Data]?) {
+        self.delegate?.viewDidEndLoading(self, error: nil)
+    }
+    
+    func loaderFailed(_ loader: GDLoader, error: Error) {
+        self.delegate?.viewDidEndLoading(self, error: error)
+    }
+}

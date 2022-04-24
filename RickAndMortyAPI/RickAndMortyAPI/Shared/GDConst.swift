@@ -17,4 +17,7 @@ class GDConst {
     // colors
     static let characterCellBGColor0 = UIColor(hexString: "3C3E44")
     static let characterCellBGColor1 = UIColor(hexString: "24282F")
+    
+    // generic messages
+    static let messageUnknown = NSLocalizedString("gd_message_unknown", comment: "")
 }

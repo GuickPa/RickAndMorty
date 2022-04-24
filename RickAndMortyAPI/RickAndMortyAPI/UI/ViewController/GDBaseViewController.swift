@@ -7,14 +7,6 @@
 
 import UIKit
 
-protocol GDDetailsLoaderViewController: UIViewController {
-    associatedtype T:GDDetailsHandler
-    
-    var loaders:[GDLoader] { get }
-    
-    init(loaders:[GDLoader], detailsHandler: T)
-}
-
 class GDBaseViewController: UIViewController {
     var loader: GDLoader
     
@@ -30,7 +22,7 @@ class GDBaseViewController: UIViewController {
 
 extension GDBaseViewController {
     func showError(_ error: Error) {
-        let alert = UIAlertController(title: NSLocalizedString("error_title", comment: "Error"), message: error.localizedDescription, preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("gd_error_title", comment: "Error"), message: error.localizedDescription, preferredStyle: .alert)
         alert.definesPresentationContext = true
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
             

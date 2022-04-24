@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GDTabBarController: UITabBarController, GDDetailsVCHandler {
+class GDTabBarController: UITabBarController {
     
     private var character: GDCharacter
     
@@ -45,20 +45,21 @@ class GDTabBarController: UITabBarController, GDDetailsVCHandler {
     */
     
     private func setupTabs() {
-        self.viewControllers = [setupCharacterTab(), setupLocationTab()]
+        self.viewControllers = [setupDetailsTab(), setupLocationTab(), setupChapterTab()]
     }
     
-    private func setupCharacterTab() -> GDBaseViewController {
-        let loader = GDDataLoader()
-        let characterHandler = GDCharacterDetailsHandler(itemId: character.id, decoder: GDGenericDataDecoder())
-        return GDCharacterViewController(loader: loader, detailsHandler: characterHandler)
+    private func setupDetailsTab() -> UIViewController {
+        return GDDetailsViewController(handlers: [GDCharacterDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder())])
     }
     
-    private func setupLocationTab() -> GDBaseViewController {
-        let loader = GDDataLoader()
-        let id = Int(character.location.url.lastPathComponent())!
-        let characterHandler = GDLocationDetailsHandler(itemId: id, decoder: GDGenericDataDecoder())
-        return GDLocationViewController(loader: loader, detailsHandler: characterHandler)
+    private func setupLocationTab() -> UIViewController {
+        return GDDetailsViewController(handlers: [
+            GDOriginDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder()),
+            GDLocationDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder())
+        ])
     }
-
+    
+    private func setupChapterTab() -> UIViewController {
+        return GDDetailsViewController(handlers: [GDChapterDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder())])
+    }
 }

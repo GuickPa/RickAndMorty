@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		BE066FCE2811BC33009675D1 /* GDCharacterItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE066FCD2811BC33009675D1 /* GDCharacterItemDetailsView.swift */; };
 		BE066FD82811F066009675D1 /* GDCharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE066FD42811F066009675D1 /* GDCharacterTableViewCell.xib */; };
-		BE066FD92811F066009675D1 /* GDCharacterItemDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE066FD52811F066009675D1 /* GDCharacterItemDetailsView.xib */; };
 		BE066FDA2811F066009675D1 /* GDMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE066FD62811F066009675D1 /* GDMainViewController.xib */; };
-		BE066FDB2811F066009675D1 /* GDCharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE066FD72811F066009675D1 /* GDCharacterViewController.xib */; };
-		BE153134281186B2007D2EE0 /* GDCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE153133281186B2007D2EE0 /* GDCharacterViewController.swift */; };
 		BE15313628118FE7007D2EE0 /* GDCharacterDetailsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15313528118FE7007D2EE0 /* GDCharacterDetailsHandler.swift */; };
-		BE4006E02813E84500671820 /* GDDetailsDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006DF2813E84500671820 /* GDDetailsDataHandler.swift */; };
 		BE4006E42813EB1600671820 /* GDTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006E32813EB1600671820 /* GDTabBarController.swift */; };
-		BE4006E92813EFAF00671820 /* GDDetailsVCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006E82813EFAF00671820 /* GDDetailsVCHandler.swift */; };
-		BE4006EC2813F79900671820 /* GDLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006EA2813F79900671820 /* GDLocationViewController.swift */; };
-		BE4006ED2813F79900671820 /* GDLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4006EB2813F79900671820 /* GDLocationViewController.xib */; };
 		BE4006EF281432D500671820 /* GDLocationItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006EE281432D500671820 /* GDLocationItemDetailsView.swift */; };
-		BE4006F12814334D00671820 /* GDLocationItemDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4006F02814334D00671820 /* GDLocationItemDetailsView.xib */; };
 		BE4006F32814687900671820 /* GDString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4006F22814687900671820 /* GDString.swift */; };
+		BE59F93828150D500014929C /* GDDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE59F93728150D500014929C /* GDDetailsViewController.swift */; };
+		BE59F93A281511290014929C /* GDOriginDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F939281511290014929C /* GDOriginDetailsView.xib */; };
+		BE59F93C281511B80014929C /* GDOriginDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE59F93B281511B80014929C /* GDOriginDetailsView.swift */; };
+		BE59F93E281534860014929C /* GDDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F93D281534860014929C /* GDDetailsViewController.xib */; };
+		BE59F94028153B700014929C /* GDCharacterItemDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F93F28153B700014929C /* GDCharacterItemDetailsView.xib */; };
+		BE59F94228153BA10014929C /* GDLocationItemDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F94128153BA10014929C /* GDLocationItemDetailsView.xib */; };
+		BE59F94428153EDE0014929C /* GDChaptersDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F94328153EDE0014929C /* GDChaptersDetailsView.xib */; };
+		BE59F94628153F0F0014929C /* GDChaptersDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE59F94528153F0F0014929C /* GDChaptersDetailsView.swift */; };
+		BE59F948281552440014929C /* GDChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F947281552440014929C /* GDChapterTableViewCell.xib */; };
+		BE59F94A28155C110014929C /* GDChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE59F94928155C110014929C /* GDChapterTableViewCell.swift */; };
 		BE6E700C280F470A00B641BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E700B280F470A00B641BC /* AppDelegate.swift */; };
 		BE6E7015280F470B00B641BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6E7014280F470B00B641BC /* Assets.xcassets */; };
 		BE6E7018280F470B00B641BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6E7016280F470B00B641BC /* LaunchScreen.storyboard */; };
@@ -71,19 +73,21 @@
 /* Begin PBXFileReference section */
 		BE066FCD2811BC33009675D1 /* GDCharacterItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCharacterItemDetailsView.swift; sourceTree = "<group>"; };
 		BE066FD42811F066009675D1 /* GDCharacterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GDCharacterTableViewCell.xib; sourceTree = "<group>"; };
-		BE066FD52811F066009675D1 /* GDCharacterItemDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GDCharacterItemDetailsView.xib; sourceTree = "<group>"; };
 		BE066FD62811F066009675D1 /* GDMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GDMainViewController.xib; sourceTree = "<group>"; };
-		BE066FD72811F066009675D1 /* GDCharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GDCharacterViewController.xib; sourceTree = "<group>"; };
-		BE153133281186B2007D2EE0 /* GDCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCharacterViewController.swift; sourceTree = "<group>"; };
 		BE15313528118FE7007D2EE0 /* GDCharacterDetailsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCharacterDetailsHandler.swift; sourceTree = "<group>"; };
-		BE4006DF2813E84500671820 /* GDDetailsDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDDetailsDataHandler.swift; sourceTree = "<group>"; };
 		BE4006E32813EB1600671820 /* GDTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDTabBarController.swift; sourceTree = "<group>"; };
-		BE4006E82813EFAF00671820 /* GDDetailsVCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDDetailsVCHandler.swift; sourceTree = "<group>"; };
-		BE4006EA2813F79900671820 /* GDLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDLocationViewController.swift; sourceTree = "<group>"; };
-		BE4006EB2813F79900671820 /* GDLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDLocationViewController.xib; sourceTree = "<group>"; };
 		BE4006EE281432D500671820 /* GDLocationItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDLocationItemDetailsView.swift; sourceTree = "<group>"; };
-		BE4006F02814334D00671820 /* GDLocationItemDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDLocationItemDetailsView.xib; sourceTree = "<group>"; };
 		BE4006F22814687900671820 /* GDString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDString.swift; sourceTree = "<group>"; };
+		BE59F93728150D500014929C /* GDDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDDetailsViewController.swift; sourceTree = "<group>"; };
+		BE59F939281511290014929C /* GDOriginDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDOriginDetailsView.xib; sourceTree = "<group>"; };
+		BE59F93B281511B80014929C /* GDOriginDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDOriginDetailsView.swift; sourceTree = "<group>"; };
+		BE59F93D281534860014929C /* GDDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDDetailsViewController.xib; sourceTree = "<group>"; };
+		BE59F93F28153B700014929C /* GDCharacterItemDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GDCharacterItemDetailsView.xib; sourceTree = "<group>"; };
+		BE59F94128153BA10014929C /* GDLocationItemDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GDLocationItemDetailsView.xib; sourceTree = "<group>"; };
+		BE59F94328153EDE0014929C /* GDChaptersDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDChaptersDetailsView.xib; sourceTree = "<group>"; };
+		BE59F94528153F0F0014929C /* GDChaptersDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDChaptersDetailsView.swift; sourceTree = "<group>"; };
+		BE59F947281552440014929C /* GDChapterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDChapterTableViewCell.xib; sourceTree = "<group>"; };
+		BE59F94928155C110014929C /* GDChapterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDChapterTableViewCell.swift; sourceTree = "<group>"; };
 		BE6E7008280F470A00B641BC /* RickAndMortyAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6E700B280F470A00B641BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE6E7014280F470B00B641BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,30 +150,22 @@
 			isa = PBXGroup;
 			children = (
 				BE066FD42811F066009675D1 /* GDCharacterTableViewCell.xib */,
-				BE066FD52811F066009675D1 /* GDCharacterItemDetailsView.xib */,
-				BE4006F02814334D00671820 /* GDLocationItemDetailsView.xib */,
+				BE59F93F28153B700014929C /* GDCharacterItemDetailsView.xib */,
+				BE59F94128153BA10014929C /* GDLocationItemDetailsView.xib */,
+				BE59F94328153EDE0014929C /* GDChaptersDetailsView.xib */,
+				BE59F939281511290014929C /* GDOriginDetailsView.xib */,
 				BE066FD62811F066009675D1 /* GDMainViewController.xib */,
-				BE066FD72811F066009675D1 /* GDCharacterViewController.xib */,
-				BE4006EB2813F79900671820 /* GDLocationViewController.xib */,
 				BE82F9162811F75200C2EE89 /* GDPicView.xib */,
+				BE59F93D281534860014929C /* GDDetailsViewController.xib */,
+				BE59F947281552440014929C /* GDChapterTableViewCell.xib */,
 			);
 			path = Nib;
-			sourceTree = "<group>";
-		};
-		BE4006DE2813E65700671820 /* CharacterDetails */ = {
-			isa = PBXGroup;
-			children = (
-				BE4006DF2813E84500671820 /* GDDetailsDataHandler.swift */,
-				BE4006E82813EFAF00671820 /* GDDetailsVCHandler.swift */,
-			);
-			path = CharacterDetails;
 			sourceTree = "<group>";
 		};
 		BE4006F42814779300671820 /* CharacterDetails */ = {
 			isa = PBXGroup;
 			children = (
-				BE153133281186B2007D2EE0 /* GDCharacterViewController.swift */,
-				BE4006EA2813F79900671820 /* GDLocationViewController.swift */,
+				BE59F93728150D500014929C /* GDDetailsViewController.swift */,
 			);
 			path = CharacterDetails;
 			sourceTree = "<group>";
@@ -273,8 +269,11 @@
 			isa = PBXGroup;
 			children = (
 				BEE61FAA281096ED00D4C808 /* GDCharacterTableViewCell.swift */,
+				BE59F94928155C110014929C /* GDChapterTableViewCell.swift */,
 				BE066FCD2811BC33009675D1 /* GDCharacterItemDetailsView.swift */,
 				BE4006EE281432D500671820 /* GDLocationItemDetailsView.swift */,
+				BE59F94528153F0F0014929C /* GDChaptersDetailsView.swift */,
+				BE59F93B281511B80014929C /* GDOriginDetailsView.swift */,
 				BE82F9182811F77600C2EE89 /* GDPicView.swift */,
 				BE82F91C28120DE000C2EE89 /* GDView.swift */,
 			);
@@ -305,7 +304,6 @@
 		BEE61FA728107EFD00D4C808 /* Handler */ = {
 			isa = PBXGroup;
 			children = (
-				BE4006DE2813E65700671820 /* CharacterDetails */,
 				BEE61FAF28109F2100D4C808 /* GDLoader.swift */,
 				BEE61FB12810A4CC00D4C808 /* GDCharacterListHandler.swift */,
 				BEE61FB32810A77A00D4C808 /* GDDataDecoder.swift */,
@@ -428,14 +426,16 @@
 			files = (
 				BE82F9172811F75200C2EE89 /* GDPicView.xib in Resources */,
 				BE066FDA2811F066009675D1 /* GDMainViewController.xib in Resources */,
-				BE4006ED2813F79900671820 /* GDLocationViewController.xib in Resources */,
-				BE066FDB2811F066009675D1 /* GDCharacterViewController.xib in Resources */,
-				BE066FD92811F066009675D1 /* GDCharacterItemDetailsView.xib in Resources */,
+				BE59F93E281534860014929C /* GDDetailsViewController.xib in Resources */,
 				BE066FD82811F066009675D1 /* GDCharacterTableViewCell.xib in Resources */,
-				BE4006F12814334D00671820 /* GDLocationItemDetailsView.xib in Resources */,
+				BE59F948281552440014929C /* GDChapterTableViewCell.xib in Resources */,
+				BE59F94228153BA10014929C /* GDLocationItemDetailsView.xib in Resources */,
+				BE59F94028153B700014929C /* GDCharacterItemDetailsView.xib in Resources */,
 				BE6E7018280F470B00B641BC /* LaunchScreen.storyboard in Resources */,
 				BE6E7046280F5E2500B641BC /* Localizable.strings in Resources */,
+				BE59F94428153EDE0014929C /* GDChaptersDetailsView.xib in Resources */,
 				BE6E7015280F470B00B641BC /* Assets.xcassets in Resources */,
+				BE59F93A281511290014929C /* GDOriginDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +461,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEE61FB62810B29900D4C808 /* GDBaseViewController.swift in Sources */,
-				BE153134281186B2007D2EE0 /* GDCharacterViewController.swift in Sources */,
 				BE6E700C280F470A00B641BC /* AppDelegate.swift in Sources */,
 				BEE61FAB281096ED00D4C808 /* GDCharacterTableViewCell.swift in Sources */,
 				BEE61FA628107D4200D4C808 /* GDMainViewController.swift in Sources */,
@@ -472,8 +471,8 @@
 				BE82F91B2811F7ED00C2EE89 /* GDViewLoader.swift in Sources */,
 				BE15313628118FE7007D2EE0 /* GDCharacterDetailsHandler.swift in Sources */,
 				BEE61FAE28109C2400D4C808 /* GDCharacter.swift in Sources */,
-				BE4006E92813EFAF00671820 /* GDDetailsVCHandler.swift in Sources */,
-				BE4006E02813E84500671820 /* GDDetailsDataHandler.swift in Sources */,
+				BE59F94628153F0F0014929C /* GDChaptersDetailsView.swift in Sources */,
+				BE59F94A28155C110014929C /* GDChapterTableViewCell.swift in Sources */,
 				BEE61FB22810A4CC00D4C808 /* GDCharacterListHandler.swift in Sources */,
 				BEACE94E28101C4600CFD02A /* GDConst.swift in Sources */,
 				BE82F9152811F1A100C2EE89 /* GDLogger.swift in Sources */,
@@ -482,11 +481,12 @@
 				BEACE94C28101BC100CFD02A /* GDOperationAction.swift in Sources */,
 				BE82F9192811F77600C2EE89 /* GDPicView.swift in Sources */,
 				BE066FCE2811BC33009675D1 /* GDCharacterItemDetailsView.swift in Sources */,
+				BE59F93C281511B80014929C /* GDOriginDetailsView.swift in Sources */,
 				BE6E7044280F5AF700B641BC /* GDOperationQueueManager.swift in Sources */,
+				BE59F93828150D500014929C /* GDDetailsViewController.swift in Sources */,
 				BEE61FB42810A77A00D4C808 /* GDDataDecoder.swift in Sources */,
 				BE6E7049280F5E7200B641BC /* GDError.swift in Sources */,
 				BE6E7042280F4A6B00B641BC /* GDOperation.swift in Sources */,
-				BE4006EC2813F79900671820 /* GDLocationViewController.swift in Sources */,
 				BE82F91D28120DE000C2EE89 /* GDView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

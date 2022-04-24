@@ -34,11 +34,11 @@ extension GDPicView: GDLoaderDelegate {
         }
     }
     
-    func loaderDidLoad(_ loader: GDLoader, data: Data?) {
+    func loaderDidLoad(_ loader: GDLoader, data: [Data]?) {
         DispatchQueue.main.async {
             self.loadingView.layer.removeAllAnimations()
             self.loadingView.isHidden = true
-            if let data = data, let image = UIImage(data: data) {
+            if let imageData = data?[0], let image = UIImage(data: imageData) {
                 self.imageView.image = image
             }
             self.loader = nil

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GDCharacterItemDetailsView: UIView {
+class GDCharacterItemDetailsView: GDDetailsView {
     
     @IBOutlet weak var containerPicView:UIView!
     @IBOutlet weak var nameLabel:UILabel!

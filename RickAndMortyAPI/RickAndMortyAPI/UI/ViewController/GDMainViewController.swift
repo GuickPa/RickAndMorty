@@ -27,15 +27,14 @@ class GDMainViewController: GDBaseViewController {
             UINib(nibName: "GDCharacterTableViewCell", bundle: nil),
             forCellReuseIdentifier: GDCharacterTableViewCell.reuseIdentifier
         )
-        // load character list and wait
+        // load character list
         self.loadingView.isHidden = false
         self.loader.delegate = self
-        
+        self.loader.load(urlString: GDConst.characterListURLString, handler: GDOperationQueueManager.instance)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.loader.load(urlString: GDConst.characterListURLString, handler: GDOperationQueueManager.instance)
     }
 }
 
@@ -68,8 +67,8 @@ extension GDMainViewController: GDLoaderDelegate {
         }
     }
     
-    func loaderDidLoad(_ loader: GDLoader, data: Data?) {
-        if let d = data {
+    func loaderDidLoad(_ loader: GDLoader, data: [Data]?) {
+        if let d = data?[0] {
             self.listHandler.listFromData(d)
         }
         DispatchQueue.main.async {

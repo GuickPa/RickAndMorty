@@ -11,4 +11,7 @@
 "gd_error_unallowed_method" = "Method not allowed";
 "gd_error_bad_format" = "Bad format";
 "gd_error_aborted" = "Operation aborted";
-"error_title" = "Error";
+"gd_error_title" = "Error";
+
+// generic messages
+"gd_message_unknown" = "Unknown";
