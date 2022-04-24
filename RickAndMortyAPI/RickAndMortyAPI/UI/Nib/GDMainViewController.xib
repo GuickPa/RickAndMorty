@@ -5,11 +5,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GDMainViewController" customModule="RickAndMortyAPI" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Rick And Morty API"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="loadingView" destination="bQM-XK-2ZL" id="yht-p0-kVC"/>
                 <outlet property="mainTableView" destination="cdJ-NW-arL" id="zwQ-hp-e8B"/>
@@ -45,7 +47,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="1I4-60-nC1"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.23529411759999999" green="0.24313725489999999" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="bQM-XK-2ZL" secondAttribute="bottom" id="31v-cN-bqB"/>
                 <constraint firstItem="bQM-XK-2ZL" firstAttribute="leading" secondItem="1I4-60-nC1" secondAttribute="leading" id="F4W-mb-3K2"/>
@@ -59,9 +61,4 @@
             <point key="canvasLocation" x="-575.36231884057975" y="82.366071428571431"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

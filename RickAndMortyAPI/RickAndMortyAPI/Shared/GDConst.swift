@@ -15,9 +15,14 @@ class GDConst {
     static let locationDetailsURLString = "\(GDConst.baseURLString)/location/%d"
     
     // colors
-    static let characterCellBGColor0 = UIColor(hexString: "3C3E44")
+    static let defaultBackgroundColor = UIColor(hexString: "3C3E44")
+    static let characterCellBGColor0 = UIColor(hexString: "323541")
     static let characterCellBGColor1 = UIColor(hexString: "24282F")
     
     // generic messages
-    static let messageUnknown = NSLocalizedString("gd_message_unknown", comment: "")
+    static let messageUnknown = GDConst.localizedString("gd_message_unknown")
+    
+    static func localizedString (_ title: String) -> String {
+      return NSLocalizedString(title, comment: "")
+    }
 }

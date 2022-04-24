@@ -20,10 +20,10 @@
 		BE59F93E281534860014929C /* GDDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F93D281534860014929C /* GDDetailsViewController.xib */; };
 		BE59F94028153B700014929C /* GDCharacterItemDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F93F28153B700014929C /* GDCharacterItemDetailsView.xib */; };
 		BE59F94228153BA10014929C /* GDLocationItemDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F94128153BA10014929C /* GDLocationItemDetailsView.xib */; };
-		BE59F94428153EDE0014929C /* GDChaptersDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F94328153EDE0014929C /* GDChaptersDetailsView.xib */; };
 		BE59F94628153F0F0014929C /* GDChaptersDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE59F94528153F0F0014929C /* GDChaptersDetailsView.swift */; };
 		BE59F948281552440014929C /* GDChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F947281552440014929C /* GDChapterTableViewCell.xib */; };
 		BE59F94A28155C110014929C /* GDChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE59F94928155C110014929C /* GDChapterTableViewCell.swift */; };
+		BE59F94C2815E2690014929C /* GDChaptersDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE59F94B2815E2690014929C /* GDChaptersDetailsView.xib */; };
 		BE6E700C280F470A00B641BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E700B280F470A00B641BC /* AppDelegate.swift */; };
 		BE6E7015280F470B00B641BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6E7014280F470B00B641BC /* Assets.xcassets */; };
 		BE6E7018280F470B00B641BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6E7016280F470B00B641BC /* LaunchScreen.storyboard */; };
@@ -84,10 +84,10 @@
 		BE59F93D281534860014929C /* GDDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDDetailsViewController.xib; sourceTree = "<group>"; };
 		BE59F93F28153B700014929C /* GDCharacterItemDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GDCharacterItemDetailsView.xib; sourceTree = "<group>"; };
 		BE59F94128153BA10014929C /* GDLocationItemDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GDLocationItemDetailsView.xib; sourceTree = "<group>"; };
-		BE59F94328153EDE0014929C /* GDChaptersDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDChaptersDetailsView.xib; sourceTree = "<group>"; };
 		BE59F94528153F0F0014929C /* GDChaptersDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDChaptersDetailsView.swift; sourceTree = "<group>"; };
 		BE59F947281552440014929C /* GDChapterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDChapterTableViewCell.xib; sourceTree = "<group>"; };
 		BE59F94928155C110014929C /* GDChapterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDChapterTableViewCell.swift; sourceTree = "<group>"; };
+		BE59F94B2815E2690014929C /* GDChaptersDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDChaptersDetailsView.xib; sourceTree = "<group>"; };
 		BE6E7008280F470A00B641BC /* RickAndMortyAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6E700B280F470A00B641BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE6E7014280F470B00B641BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 				BE066FD42811F066009675D1 /* GDCharacterTableViewCell.xib */,
 				BE59F93F28153B700014929C /* GDCharacterItemDetailsView.xib */,
 				BE59F94128153BA10014929C /* GDLocationItemDetailsView.xib */,
-				BE59F94328153EDE0014929C /* GDChaptersDetailsView.xib */,
+				BE59F94B2815E2690014929C /* GDChaptersDetailsView.xib */,
 				BE59F939281511290014929C /* GDOriginDetailsView.xib */,
 				BE066FD62811F066009675D1 /* GDMainViewController.xib */,
 				BE82F9162811F75200C2EE89 /* GDPicView.xib */,
@@ -424,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE59F94C2815E2690014929C /* GDChaptersDetailsView.xib in Resources */,
 				BE82F9172811F75200C2EE89 /* GDPicView.xib in Resources */,
 				BE066FDA2811F066009675D1 /* GDMainViewController.xib in Resources */,
 				BE59F93E281534860014929C /* GDDetailsViewController.xib in Resources */,
@@ -433,7 +434,6 @@
 				BE59F94028153B700014929C /* GDCharacterItemDetailsView.xib in Resources */,
 				BE6E7018280F470B00B641BC /* LaunchScreen.storyboard in Resources */,
 				BE6E7046280F5E2500B641BC /* Localizable.strings in Resources */,
-				BE59F94428153EDE0014929C /* GDChaptersDetailsView.xib in Resources */,
 				BE6E7015280F470B00B641BC /* Assets.xcassets in Resources */,
 				BE59F93A281511290014929C /* GDOriginDetailsView.xib in Resources */,
 			);

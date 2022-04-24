@@ -20,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController:
                                                             GDMainViewController(loader: loader, listHandler: listHandler)
         )
+        // some start setting
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .clear
+        navigationController.navigationBar.standardAppearance = appearance
+        navigationController.navigationBar.scrollEdgeAppearance = navigationController.navigationBar.standardAppearance
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true

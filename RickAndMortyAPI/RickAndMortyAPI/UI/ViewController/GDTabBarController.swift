@@ -28,8 +28,14 @@ class GDTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .clear
+        self.tabBar.standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            self.tabBar.scrollEdgeAppearance = self.tabBar.standardAppearance
+        }
         self.setupTabs()
     }
     
@@ -46,20 +52,33 @@ class GDTabBarController: UITabBarController {
     
     private func setupTabs() {
         self.viewControllers = [setupDetailsTab(), setupLocationTab(), setupChapterTab()]
+        self.tabBar.items?.indices.forEach{
+            let item = self.tabBar.items![$0]
+            item.image = UIImage(systemName: "person")
+            item.selectedImage = UIImage(systemName: "person.fill")
+        }
     }
     
     private func setupDetailsTab() -> UIViewController {
-        return GDDetailsViewController(handlers: [GDCharacterDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder())])
+        let vc = GDDetailsViewController(handlers: [GDCharacterDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder())])
+        vc.title = "Profile"
+        return vc
     }
     
     private func setupLocationTab() -> UIViewController {
-        return GDDetailsViewController(handlers: [
+        let vc = GDDetailsViewController(handlers: [
+            GDLocationDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder()),
             GDOriginDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder()),
-            GDLocationDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder())
         ])
+        
+        vc.title = "Origin and Location"
+        return vc
     }
     
     private func setupChapterTab() -> UIViewController {
-        return GDDetailsViewController(handlers: [GDChapterDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder())])
+        let vc = GDDetailsViewController(handlers: [GDChapterDetailsHandler(characterItem: self.character, decoder: GDGenericDataDecoder())])
+        
+        vc.title = "Episodes"
+        return vc
     }
 }

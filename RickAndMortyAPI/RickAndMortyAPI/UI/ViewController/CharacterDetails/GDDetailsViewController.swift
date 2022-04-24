@@ -12,8 +12,6 @@ protocol GDDetailsVC: UIViewController {
 }
 
 class GDDetailsViewController: UIViewController, GDDetailsVC {
-    @IBOutlet var containerView: UIStackView!
-    
     private var detailsHandlers:[GDDetailsHandler] = []
     
     required init(handlers: [GDDetailsHandler]) {
@@ -29,9 +27,25 @@ class GDDetailsViewController: UIViewController, GDDetailsVC {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        var lastView:UIView? = nil
         self.detailsHandlers.forEach{
-            self.containerView.addArrangedSubview($0.detailsView())
+            let subview = $0.detailsView()
+            self.view.addSubview(subview)
+            if ($0.matchParent) {
+                self.matchParent(subview)
+            } else {
+                self.stack(subview, lastView: lastView)
+            }
             $0.load(loader: GDDataLoader())
+            lastView = subview
         }
+    }
+    
+    func matchParent(_ view: UIView) {
+        view.setUpConstraint(superView: self.view)
+    }
+    
+    func stack(_ view: UIView, lastView: UIView?) {
+        view.setUpConstraint(toTopView: lastView, superView: self.view)
     }
 }

@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GDDetailsViewController" customModule="RickAndMortyAPI" customModuleProvider="target">
             <connections>
-                <outlet property="containerView" destination="hW8-jx-c4s" id="swQ-6y-zT6"/>
                 <outlet property="view" destination="MMj-st-iQf" id="cCN-yD-i0Q"/>
             </connections>
         </placeholder>
@@ -18,19 +17,8 @@
         <view contentMode="scaleToFill" id="MMj-st-iQf">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hW8-jx-c4s">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                </stackView>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="HKE-Ro-1rI"/>
             <color key="backgroundColor" red="0.23529411759999999" green="0.24313725489999999" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="HKE-Ro-1rI" firstAttribute="trailing" secondItem="hW8-jx-c4s" secondAttribute="trailing" id="QGY-LE-fGZ"/>
-                <constraint firstItem="HKE-Ro-1rI" firstAttribute="bottom" secondItem="hW8-jx-c4s" secondAttribute="bottom" id="bLx-Wr-0qF"/>
-                <constraint firstItem="hW8-jx-c4s" firstAttribute="top" secondItem="HKE-Ro-1rI" secondAttribute="top" id="dv7-56-fHl"/>
-                <constraint firstItem="hW8-jx-c4s" firstAttribute="leading" secondItem="HKE-Ro-1rI" secondAttribute="leading" id="yHi-QS-cd0"/>
-            </constraints>
             <point key="canvasLocation" x="-180" y="78"/>
         </view>
     </objects>

@@ -11,6 +11,8 @@ import UIKit
 //MARK: PROTOCOL
 protocol GDDetailsHandler {
     var characterItem: GDCharacter { get }
+    var matchParent: Bool { get }
+    
     func detailsFromData(_ data: Data)
     func detailsView() -> UIView
     func fillView()
@@ -30,6 +32,8 @@ class GDCharacterDetailsHandler: GDDetailsHandler {
         }
     }
     
+    var matchParent: Bool { get { return false } }
+    
     required init(characterItem: GDCharacter, decoder: GDDataDecoder) {
         self.character = characterItem
         self.decoder = decoder
@@ -42,7 +46,7 @@ class GDCharacterDetailsHandler: GDDetailsHandler {
     func detailsView() -> UIView {
         let view:GDCharacterItemDetailsView = GDCustomViewLoader.loadView()
         view.setupPicView()
-        view.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
+        // view.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
         self.mainView = view
         return view
     }
@@ -74,6 +78,8 @@ class GDLocationDetailsHandler: GDDetailsHandler {
         }
     }
     
+    var matchParent: Bool { get { return false } }
+    
     required init(characterItem: GDCharacter, decoder: GDDataDecoder) {
         self.character = characterItem
         self.decoder = decoder
@@ -85,7 +91,6 @@ class GDLocationDetailsHandler: GDDetailsHandler {
     
     func detailsView() -> UIView {
         let view:GDLocationItemDetailsView = GDCustomViewLoader.loadView()
-        view.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
         self.mainView = view
         return view
     }
@@ -134,6 +139,8 @@ class GDOriginDetailsHandler: GDDetailsHandler {
     weak var mainView: GDOriginDetailsView!
     var loader:GDLoader!
     
+    var matchParent: Bool { get { return false } }
+    
     var characterItem: GDCharacter {
         get {
             return character
@@ -151,7 +158,6 @@ class GDOriginDetailsHandler: GDDetailsHandler {
     
     func detailsView() -> UIView {
         let view:GDOriginDetailsView = GDCustomViewLoader.loadView()
-        view.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
         self.mainView = view
         return view
     }
@@ -195,6 +201,8 @@ class GDChapterDetailsHandler: NSObject, GDDetailsHandler {
     weak var mainView: GDChaptersDetailsView!
     var loader:GDLoader!
     
+    var matchParent: Bool { get { return true } }
+    
     var characterItem: GDCharacter {
         get {
             return character
@@ -237,7 +245,8 @@ extension GDChapterDetailsHandler: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GDChapterTableViewCell.reuseIdentifier) as! GDChapterTableViewCell
-        cell.titleLabel.text = self.chapters[indexPath.row].name
+        let ep = self.chapters[indexPath.row]
+        cell.titleLabel.text = "\(ep.name) (\(ep.episode)) "
         
         return cell
     }

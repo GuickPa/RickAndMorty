@@ -18,13 +18,13 @@ extension GDError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .instanceError:
-            return NSLocalizedString("gd_error_instance", comment: "")
+            return GDConst.localizedString("gd_error_instance")
         case .methodNotAllowed:
-            return NSLocalizedString("gd_error_unallowed_method", comment: "")
+            return GDConst.localizedString("gd_error_unallowed_method")
         case .badFormat:
-            return NSLocalizedString("gd_error_bad_format", comment: "")
+            return GDConst.localizedString("gd_error_bad_format")
         case .aborted:
-            return NSLocalizedString("gd_error_aborted", comment: "")
+            return GDConst.localizedString("gd_error_aborted")
         }
     }
 }
