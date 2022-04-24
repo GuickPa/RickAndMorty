@@ -49,10 +49,21 @@ extension GDMainViewController: UITableViewDataSource {
     }
 }
 
+//MARK: UITableViewDataSourcePrefetching
+extension GDMainViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        return self.listHandler.tableView(tableView, prefetchRowsAt: indexPaths, withLoader: GDDataLoader())
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        return self.listHandler.tableView(tableView, cancelPrefetchingForRowsAt: indexPaths)
+    }
+}
+
 //MARK: UITableViewDelegate
 extension GDMainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let character = self.listHandler.list?.results[indexPath.row] {
+        if let character = self.listHandler.getCharacter(byIndex: indexPath.row) {
             let tbvc = GDTabBarController(characterItem: character)
             self.navigationController?.pushViewController(tbvc, animated: true)
         }

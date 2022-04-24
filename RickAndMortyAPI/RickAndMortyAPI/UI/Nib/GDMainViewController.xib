@@ -30,6 +30,7 @@
                     <connections>
                         <outlet property="dataSource" destination="-1" id="6i1-Ti-j4Q"/>
                         <outlet property="delegate" destination="-1" id="5Ss-7I-qXG"/>
+                        <outlet property="prefetchDataSource" destination="-1" id="75o-CY-TrP"/>
                     </connections>
                 </tableView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQM-XK-2ZL">

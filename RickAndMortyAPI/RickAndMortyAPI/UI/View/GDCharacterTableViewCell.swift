@@ -28,5 +28,7 @@ class GDCharacterTableViewCell: UITableViewCell {
         super.prepareForReuse()
         self.nameLabel.text = nil
         self.picView?.imageView.image = nil
+        self.conditionLabel.text = nil
+        self.genderLabel.text = nil
     }
 }

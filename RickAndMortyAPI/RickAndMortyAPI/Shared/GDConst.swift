@@ -11,6 +11,7 @@ import UIKit
 class GDConst {
     static let baseURLString = "https://rickandmortyapi.com/api"
     static let characterListURLString = "\(GDConst.baseURLString)/character"
+    static let characterListPageURLString = "\(GDConst.baseURLString)/character?page=%d"
     static let characterDetailsURLString = "\(GDConst.baseURLString)/character/%d"
     static let locationDetailsURLString = "\(GDConst.baseURLString)/location/%d"
     

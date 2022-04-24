@@ -22,7 +22,7 @@ protocol GDLoaderDelegate: AnyObject {
 
 class GDDataLoader {
     weak var _delegate: GDLoaderDelegate!
-    var operations: [GDOperation]!
+    var operations: [GDOperation] = []
     var data:[Data] = []
     
     var delegate: GDLoaderDelegate! {
@@ -46,7 +46,7 @@ extension GDDataLoader: GDLoader {
         }
         catch let ex {
             self.delegate.loaderFailed(self, error: ex)
-            self.operations = nil
+            self.operations = []
         }
     }
     
@@ -63,13 +63,13 @@ extension GDDataLoader: GDLoader {
         }
         catch let ex {
             self.delegate.loaderFailed(self, error: ex)
-            self.operations = nil
+            self.operations = []
         }
     }
     
     func cancel() {
         self.operations.forEach{ $0.cancel() }
-        self.operations = nil
+        self.operations = []
     }
 }
 
@@ -83,7 +83,7 @@ extension GDDataLoader: GDOperationDelegate {
         self.data.append(data!)
         if self.data.count == self.operations.count {
             self.delegate.loaderDidLoad(self, data: self.data)
-            self.operations = nil
+            self.operations = []
         }
     }
     
