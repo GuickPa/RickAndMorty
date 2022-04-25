@@ -53,10 +53,10 @@ extension GDMainViewController: UITableViewDataSource {
 extension GDMainViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         if let index = indexPaths.first(where: {
-            let page = $0.row / GDConst.characterListDefaultPageCount
+            let page = ($0.row / GDConst.characterListDefaultPageCount) + 1
             return self.listHandler.shouldLoadPage(index: page)
         }) {
-            let page = index.row / GDConst.characterListDefaultPageCount
+            let page = (index.row / GDConst.characterListDefaultPageCount) + 1
             self.loader.load(urlString: String(format: GDConst.characterListPageURLString, page), handler: GDOperationQueueManager.instance)
         }
     }
@@ -109,6 +109,8 @@ extension GDMainViewController: GDLoaderDelegate {
     }
     
     func loaderCancelled(_ loader: GDLoader) {
-        
+        DispatchQueue.main.async {
+            self.loadingView.isHidden = true
+        }
     }
 }

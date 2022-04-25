@@ -82,6 +82,6 @@ class GDCharacterListHandler: GDListHandler {
 //MARK: prefetch data
 extension GDCharacterListHandler {
     func shouldLoadPage(index:Int) -> Bool {
-        return index >= (self.characters.count / GDConst.characterListDefaultPageCount)
+        return index > (self.characters.count / GDConst.characterListDefaultPageCount)
     }
 }
