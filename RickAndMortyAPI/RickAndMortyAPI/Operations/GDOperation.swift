@@ -28,11 +28,11 @@ class GDOperation: Operation, GDOperationHandler {
     
     private var operationAction:GDOperationAction
     
-    override var isAsynchronous: Bool {
-        get {
-            return false
-        }
-    }
+//    override var isAsynchronous: Bool {
+//        get {
+//            return false
+//        }
+//    }
     
     override var isExecuting: Bool {
         get {
@@ -75,8 +75,11 @@ class GDOperation: Operation, GDOperationHandler {
         }
         else {
             self.delegate?.operationStarted(self)
-            self.operationAction.main(sessionHandler: GDSession()) { data, error in
-                if let e = error {
+            self.operationAction.main(sessionHandler: GDSession()) { data, error, cancelled in
+                if cancelled {
+                    self.delegate?.operationCancelled(self)
+                }
+                else if let e = error {
                     self.delegate?.operationFailed(self, withError: e)
                 } else {
                     self.delegate?.operationCompleted(self, withData: data)
@@ -87,16 +90,20 @@ class GDOperation: Operation, GDOperationHandler {
     }
     
     override func cancel() {
+        super.cancel()
+        self.operationAction.cancel()
         self.finish()
     }
     
     func finish() {
-        self.willChangeValue(forKey: "isExecuting")
-        self.willChangeValue(forKey: "isFinished")
-        _isExecuting = false
-        _isFinished = true
-        self.didChangeValue(forKey: "isFinished")
-        self.didChangeValue(forKey: "isExecuting")
+        if self.isExecuting {
+            self.willChangeValue(forKey: "isExecuting")
+            self.willChangeValue(forKey: "isFinished")
+            _isExecuting = false
+            _isFinished = true
+            self.didChangeValue(forKey: "isFinished")
+            self.didChangeValue(forKey: "isExecuting")
+        }
     }
     
     // MARK: init

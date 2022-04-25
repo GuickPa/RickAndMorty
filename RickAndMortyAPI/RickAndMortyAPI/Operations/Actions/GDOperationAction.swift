@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias GDOperationActionCallback = (Data?, Error?) -> Void
+typealias GDOperationActionCallback = (Data?, Error?, Bool) -> Void
 
 protocol GDOperationAction {
     func main(sessionHandler: GDSessionHandler, callback: @escaping GDOperationActionCallback)
@@ -44,8 +44,9 @@ class GDAPIOperationAction: GDOperationAction {
                 GDLogger.log("API response error is", e, self.urlRequest.url?.absoluteString ?? "")
             }
 #endif
-            self.operationCallback(data, error)
-            self.sessionHandler.endDataTask()
+            let code = (error as NSError?)?.code ?? 0
+            self.operationCallback(data, error, code == -999)
+            self.sessionHandler?.endDataTask()
             self.operationCallback = nil
         })
         self.httpDataTask.resume()
@@ -53,8 +54,6 @@ class GDAPIOperationAction: GDOperationAction {
     
     func cancel() {
         self.httpDataTask?.cancel()
-        self.operationCallback(nil, GDError.aborted)
-        self.sessionHandler.endDataTask()
-        self.operationCallback = nil
+        self.sessionHandler?.endDataTask()
     }
 }

@@ -52,11 +52,18 @@ extension GDMainViewController: UITableViewDataSource {
 //MARK: UITableViewDataSourcePrefetching
 extension GDMainViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        return self.listHandler.tableView(tableView, prefetchRowsAt: indexPaths, withLoader: GDDataLoader())
+        if let index = indexPaths.first(where: {
+            let page = $0.row / GDConst.characterListDefaultPageCount
+            return self.listHandler.shouldLoadPage(index: page)
+        }) {
+            let page = index.row / GDConst.characterListDefaultPageCount
+            self.loader.load(urlString: String(format: GDConst.characterListPageURLString, page), handler: GDOperationQueueManager.instance)
+        }
     }
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        return self.listHandler.tableView(tableView, cancelPrefetchingForRowsAt: indexPaths)
+        self.loader.cancel()
+        self.loadingView.isHidden = true
     }
 }
 
@@ -67,6 +74,10 @@ extension GDMainViewController: UITableViewDelegate {
             let tbvc = GDTabBarController(characterItem: character)
             self.navigationController?.pushViewController(tbvc, animated: true)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.listHandler.tableView(tableView, willDisplay: cell, forRowAt: indexPath)
     }
 }
 
@@ -95,5 +106,9 @@ extension GDMainViewController: GDLoaderDelegate {
             self.loadingView.isHidden = true
             self.showError(error)
         }
+    }
+    
+    func loaderCancelled(_ loader: GDLoader) {
+        
     }
 }

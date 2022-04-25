@@ -43,7 +43,7 @@ protocol GDDetailsViewDelegate: AnyObject {
 class GDDetailsView: UIView {
     private weak var _delegate: GDDetailsViewDelegate?
     
-    var delegate: GDDetailsViewDelegate? {
+    weak var delegate: GDDetailsViewDelegate? {
         get {
             return _delegate
         }
@@ -64,5 +64,9 @@ extension GDDetailsView: GDLoaderDelegate {
     
     func loaderFailed(_ loader: GDLoader, error: Error) {
         self.delegate?.viewDidEndLoading(self, error: error)
+    }
+    
+    func loaderCancelled(_ loader: GDLoader) {
+        self.delegate?.viewDidEndLoading(self, error: GDError.aborted)
     }
 }

@@ -129,6 +129,13 @@ extension GDLocationDetailsHandler: GDLoaderDelegate {
         self.mainView.dimensionLabel.text = GDConst.messageUnknown
         self.mainView.residentsCountLabel.text = GDConst.messageUnknown
     }
+    
+    func loaderCancelled(_ loader: GDLoader) {
+        self.mainView.nameLabel.text = GDConst.messageUnknown
+        self.mainView.typeLabel.text = GDConst.messageUnknown
+        self.mainView.dimensionLabel.text = GDConst.messageUnknown
+        self.mainView.residentsCountLabel.text = GDConst.messageUnknown
+    }
 }
 
 //MARK: GDLocationDetailsHandler
@@ -188,6 +195,10 @@ extension GDOriginDetailsHandler: GDLoaderDelegate {
     }
     
     func loaderFailed(_ loader: GDLoader, error: Error) {
+        self.mainView.originLabel.text = GDConst.messageUnknown
+    }
+    
+    func loaderCancelled(_ loader: GDLoader) {
         self.mainView.originLabel.text = GDConst.messageUnknown
     }
 }
@@ -268,6 +279,10 @@ extension GDChapterDetailsHandler: GDLoaderDelegate {
     }
     
     func loaderFailed(_ loader: GDLoader, error: Error) {
+        
+    }
+    
+    func loaderCancelled(_ loader: GDLoader) {
         
     }
 }

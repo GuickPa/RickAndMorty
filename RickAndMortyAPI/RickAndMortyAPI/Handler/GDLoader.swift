@@ -18,6 +18,7 @@ protocol GDLoaderDelegate: AnyObject {
     func loaderDidStart(_ loader: GDLoader)
     func loaderDidLoad(_ loader: GDLoader, data: [Data]?)
     func loaderFailed(_ loader: GDLoader, error: Error)
+    func loaderCancelled(_ loader: GDLoader)
 }
 
 class GDDataLoader {
@@ -25,7 +26,7 @@ class GDDataLoader {
     var operations: [GDOperation] = []
     var data:[Data] = []
     
-    var delegate: GDLoaderDelegate! {
+    weak var delegate: GDLoaderDelegate! {
         get {
             return _delegate
         }
@@ -93,7 +94,7 @@ extension GDDataLoader: GDOperationDelegate {
     }
     
     func operationCancelled(_ operation: GDOperation) {
-        self.delegate.loaderFailed(self, error: GDError.aborted)
+        self.delegate.loaderCancelled(self)
         self.cancel()
     }
 }

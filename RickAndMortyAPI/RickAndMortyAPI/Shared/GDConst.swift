@@ -15,6 +15,9 @@ class GDConst {
     static let characterDetailsURLString = "\(GDConst.baseURLString)/character/%d"
     static let locationDetailsURLString = "\(GDConst.baseURLString)/location/%d"
     
+    // constants
+    static let characterListDefaultPageCount: Int = 20
+    
     // colors
     static let defaultBackgroundColor = UIColor(hexString: "3C3E44")
     static let characterCellBGColor0 = UIColor(hexString: "323541")

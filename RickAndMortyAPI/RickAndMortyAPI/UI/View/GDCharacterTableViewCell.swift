@@ -20,6 +20,7 @@ class GDCharacterTableViewCell: UITableViewCell {
         if self.picView == nil {
             self.picView = GDCustomViewLoader.loadView()
         }
+        self.picView?.cancelLoading()
         self.picView?.setUpConstraint(superView: self.containerPicView)
         self.needsUpdateConstraints()
     }

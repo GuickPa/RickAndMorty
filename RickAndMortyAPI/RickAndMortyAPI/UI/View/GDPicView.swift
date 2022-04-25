@@ -18,6 +18,10 @@ class GDPicView: UIView {
         self.loader.delegate = self
         loader.load(urlString: urlToImage, handler: handler)
     }
+    
+    func cancelLoading() {
+        self.loader?.cancel()
+    }
 }
 
 extension GDPicView: GDLoaderDelegate {
@@ -52,5 +56,9 @@ extension GDPicView: GDLoaderDelegate {
             self.imageView.image = UIImage(named: "rickandmorty")
             self.loader = nil
         }
+    }
+    
+    func loaderCancelled(_ loader: GDLoader) {
+        
     }
 }

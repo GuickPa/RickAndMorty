@@ -13,16 +13,14 @@ protocol GDListHandler {
     func getCharacter(byIndex index: Int) -> GDCharacter?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath], withLoader loader: GDLoader)
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath])
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    func shouldLoadPage(index:Int) -> Bool
 }
 
 class GDCharacterListHandler: GDListHandler {
     let decoder: GDDataDecoder
     private var characterList: GDCharacterList?
     private var characters: [GDCharacter]
-    // for paging
-    private var prefetchLoader: GDLoader?
     
     var list: GDCharacterList? {
         get {
@@ -58,52 +56,32 @@ class GDCharacterListHandler: GDListHandler {
         let cell = tableView.dequeueReusableCell(withIdentifier: GDCharacterTableViewCell.reuseIdentifier, for: indexPath) as! GDCharacterTableViewCell
         cell.prepareForReuse()
         cell.contentView.backgroundColor = indexPath.row % 2 == 0 ? GDConst.characterCellBGColor0 : GDConst.characterCellBGColor1
-        if self.characters.count > indexPath.row {
-            let character = self.characters[indexPath.row]
-            cell.nameLabel.text = character.name
-            cell.conditionLabel.text = character.condition()
-            cell.genderLabel.text = character.gender
-            cell.setupPicView()
-            cell.picView?.load(urlToImage: character.image, loader: GDDataLoader(), handler: GDOperationQueueManager.instance)
-        } else {
-            cell.nameLabel.text = GDConst.localizedString("gd_generic_error")
-        }
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let gdCell = cell as? GDCharacterTableViewCell {
+            if indexPath.row < self.characters.count {
+                let character = self.characters[indexPath.row]
+                self.fillCell(gdCell, withCharacter: character)
+            } else {
+                gdCell.nameLabel.text = GDConst.localizedString("gd_generic_error")
+            }
+        }
+    }
+    
+    func fillCell(_ cell: GDCharacterTableViewCell, withCharacter character: GDCharacter) {
+        cell.nameLabel.text = character.name
+        cell.conditionLabel.text = character.condition()
+        cell.genderLabel.text = character.gender
+        cell.setupPicView()
+        cell.picView?.load(urlToImage: character.image, loader: GDDataLoader(), handler: GDOperationQueueManager.instance)
     }
 }
 
 //MARK: prefetch data
 extension GDCharacterListHandler {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath], withLoader loader: GDLoader) {
-        if let index = indexPaths.first(where: { $0.row >= self.characters.count }), let info = self.characterList?.info {
-            let page = info.count / index.row
-            self.prefetchLoader = loader
-            self.prefetchLoader?.delegate = self
-            loader.load(urlString: String(format: GDConst.characterListPageURLString, page), handler: GDOperationQueueManager.instance)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        if let loader = self.prefetchLoader {
-            loader.cancel()
-            self.prefetchLoader = nil
-        }
+    func shouldLoadPage(index:Int) -> Bool {
+        return index >= (self.characters.count / GDConst.characterListDefaultPageCount)
     }
 }
-
-//MARK: GDLoaderDelegate
-extension GDCharacterListHandler: GDLoaderDelegate {
-    func loaderDidStart(_ loader: GDLoader) {
-    }
-    
-    func loaderDidLoad(_ loader: GDLoader, data: [Data]?) {
-        if let d = data?[0] {
-            self.listFromData(d)
-        }
-    }
-    
-    func loaderFailed(_ loader: GDLoader, error: Error) {
-    }
-}
-
