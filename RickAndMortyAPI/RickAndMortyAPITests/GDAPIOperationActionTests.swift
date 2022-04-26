@@ -38,7 +38,7 @@ class GDAPIOperationActionTests: XCTestCase {
     func testGet() throws {
         let expectation = XCTestExpectation(description: "Get Request")
         let operation = try GDAPIOperationAction(GDConst.baseURLString, method: .get)
-        operation.main(sessionHandler: self.sessionHandler!) { data, error in
+        operation.main(sessionHandler: self.sessionHandler!) { data, error, cancelled in
             XCTAssert(data != nil)
             expectation.fulfill()
         }

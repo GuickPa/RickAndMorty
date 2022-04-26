@@ -11,7 +11,7 @@ import XCTest
 class TestOperationAction: GDOperationAction {
     func main(sessionHandler: GDSessionHandler, callback: @escaping GDOperationActionCallback) {
         let data = "TEST OK".data(using: .utf8)
-        callback(data, nil)
+        callback(data, nil, false)
     }
     
     func cancel() {
@@ -21,7 +21,7 @@ class TestOperationAction: GDOperationAction {
 
 class TestOperationErrorAction: GDOperationAction {
     func main(sessionHandler: GDSessionHandler, callback: @escaping GDOperationActionCallback) {
-        callback(nil, GDError.instanceError)
+        callback(nil, GDError.instanceError, false)
     }
     
     func cancel() {
